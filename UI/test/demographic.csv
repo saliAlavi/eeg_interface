@@ -1,0 +1,5 @@
+index,itemText,type,options,ticks,tickLabels,layout,itemColor,itemWidth,responseColor,responseWidth,granularity,font,,,,,,,,,,,,,
+1,Gender,choice,"Man, Woman, Non-binary, Prefer not to say ",,,,,,,,,,,,,,,,,,,,,,
+2,Age,slider,"18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30",,,,,,,,,,,,,,,,,,,,,,
+3,Preferred hand,choice,"Right, Left, Any",,,,,,,,,,,,,,,,,,,,,,
+4,Preferred ear to listen to,choice,"Right, Left, Any",,,,,,,,,,,,,,,,,,,,,,
