@@ -1,0 +1,447 @@
+7.4072 	WARNING 	Couldn't measure a consistent frame rate!
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+7.4088 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=True, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x7fc1689d4e50>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x7fc1689d4df0>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x7fc1689d4c10>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x7fc15d50d940>, multiSample=False, name='window1', numSamples=2, pos=[367.5, 239.0], screen=0, size=array([2940, 1912]), stencilBits=8, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+7.4091 	EXP 	window1: mouseVisible = True
+7.4091 	EXP 	window1: backgroundImage = ''
+7.4092 	EXP 	window1: backgroundFit = 'none'
+7.4129 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+7.4130 	EXP 	window1: recordFrameIntervals = False
+7.4965 	EXP 	window1: recordFrameIntervals = True
+8.3297 	WARNING 	Couldn't measure a consistent frame rate!
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+8.3305 	EXP 	window1: mouseVisible = False
+9.5664 	EXP 	test: status = STARTED
+9.5699 	EXP 	window1: mouseVisible = True
+9.6229 	EXP 	Created WelcomeText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='WelcomeText', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+9.6407 	EXP 	Imported /Users/hassan.491/Library/Mobile Documents/com~apple~Numbers/Documents/formItems.csv as conditions, 4 conditions, 13 params
+9.6418 	EXP 	Question text: Gender
+9.6419 	EXP 	window1: mouseVisible = True
+9.6420 	EXP 	window1: mouseVisible = True
+9.6423 	EXP 	window1: mouseVisible = True
+9.6426 	EXP 	window1: mouseVisible = True
+9.6544 	EXP 	window1: mouseVisible = True
+9.6545 	EXP 	window1: mouseVisible = True
+9.6548 	EXP 	window1: mouseVisible = True
+9.6552 	EXP 	window1: mouseVisible = True
+9.6647 	EXP 	window1: mouseVisible = True
+9.6747 	EXP 	window1: mouseVisible = True
+9.6749 	EXP 	window1: mouseVisible = True
+9.6775 	EXP 	window1: mouseVisible = True
+9.6776 	EXP 	window1: mouseVisible = True
+9.6779 	EXP 	window1: mouseVisible = True
+9.6782 	EXP 	window1: mouseVisible = True
+9.6860 	EXP 	window1: mouseVisible = True
+9.6861 	EXP 	window1: mouseVisible = True
+9.6864 	EXP 	window1: mouseVisible = True
+9.6867 	EXP 	window1: mouseVisible = True
+9.6910 	EXP 	window1: mouseVisible = True
+9.6910 	EXP 	window1: mouseVisible = True
+9.6913 	EXP 	window1: mouseVisible = True
+9.6916 	EXP 	window1: mouseVisible = True
+9.6995 	EXP 	window1: mouseVisible = True
+9.6996 	EXP 	window1: mouseVisible = True
+9.6999 	EXP 	window1: mouseVisible = True
+9.7001 	EXP 	window1: mouseVisible = True
+9.7036 	EXP 	window1: mouseVisible = True
+9.7037 	EXP 	window1: mouseVisible = True
+9.7040 	EXP 	window1: mouseVisible = True
+9.7042 	EXP 	window1: mouseVisible = True
+9.7131 	EXP 	window1: mouseVisible = True
+9.7132 	EXP 	window1: mouseVisible = True
+9.7135 	EXP 	window1: mouseVisible = True
+9.7137 	EXP 	window1: mouseVisible = True
+9.7171 	EXP 	window1: mouseVisible = True
+9.7172 	EXP 	window1: mouseVisible = True
+9.7175 	EXP 	window1: mouseVisible = True
+9.7178 	EXP 	window1: mouseVisible = True
+9.7257 	EXP 	window1: mouseVisible = True
+9.7258 	EXP 	window1: mouseVisible = True
+9.7261 	EXP 	window1: mouseVisible = True
+9.7264 	EXP 	window1: mouseVisible = True
+9.7302 	EXP 	window1: mouseVisible = True
+9.7320 	EXP 	window1: mouseVisible = True
+9.7453 	EXP 	Question text: Age
+9.7454 	EXP 	window1: mouseVisible = True
+9.7455 	EXP 	window1: mouseVisible = True
+9.7458 	EXP 	window1: mouseVisible = True
+9.7461 	EXP 	window1: mouseVisible = True
+9.7543 	EXP 	window1: mouseVisible = True
+9.7544 	EXP 	window1: mouseVisible = True
+9.7547 	EXP 	window1: mouseVisible = True
+9.7550 	EXP 	window1: mouseVisible = True
+9.7585 	EXP 	window1: mouseVisible = True
+9.7591 	EXP 	window1: mouseVisible = True
+9.7592 	EXP 	window1: mouseVisible = True
+9.7603 	EXP 	window1: mouseVisible = True
+9.7604 	EXP 	window1: mouseVisible = True
+9.7607 	EXP 	window1: mouseVisible = True
+9.7610 	EXP 	window1: mouseVisible = True
+9.7690 	EXP 	window1: mouseVisible = True
+9.7691 	EXP 	window1: mouseVisible = True
+9.7694 	EXP 	window1: mouseVisible = True
+9.7697 	EXP 	window1: mouseVisible = True
+9.7736 	EXP 	window1: mouseVisible = True
+9.7737 	EXP 	window1: mouseVisible = True
+9.7740 	EXP 	window1: mouseVisible = True
+9.7743 	EXP 	window1: mouseVisible = True
+9.7803 	EXP 	window1: mouseVisible = True
+9.7804 	EXP 	window1: mouseVisible = True
+9.7807 	EXP 	window1: mouseVisible = True
+9.7809 	EXP 	window1: mouseVisible = True
+9.7848 	EXP 	window1: mouseVisible = True
+9.7849 	EXP 	window1: mouseVisible = True
+9.7851 	EXP 	window1: mouseVisible = True
+9.7854 	EXP 	window1: mouseVisible = True
+9.7922 	EXP 	window1: mouseVisible = True
+9.7923 	EXP 	window1: mouseVisible = True
+9.7926 	EXP 	window1: mouseVisible = True
+9.7928 	EXP 	window1: mouseVisible = True
+9.7966 	EXP 	window1: mouseVisible = True
+9.7967 	EXP 	window1: mouseVisible = True
+9.7970 	EXP 	window1: mouseVisible = True
+9.7973 	EXP 	window1: mouseVisible = True
+9.8020 	EXP 	window1: mouseVisible = True
+9.8021 	EXP 	window1: mouseVisible = True
+9.8024 	EXP 	window1: mouseVisible = True
+9.8027 	EXP 	window1: mouseVisible = True
+9.8066 	EXP 	window1: mouseVisible = True
+9.8066 	EXP 	window1: mouseVisible = True
+9.8069 	EXP 	window1: mouseVisible = True
+9.8072 	EXP 	window1: mouseVisible = True
+9.8106 	EXP 	window1: mouseVisible = True
+9.8107 	EXP 	window1: mouseVisible = True
+9.8110 	EXP 	window1: mouseVisible = True
+9.8113 	EXP 	window1: mouseVisible = True
+9.8151 	EXP 	window1: mouseVisible = True
+9.8152 	EXP 	window1: mouseVisible = True
+9.8155 	EXP 	window1: mouseVisible = True
+9.8157 	EXP 	window1: mouseVisible = True
+9.8220 	EXP 	window1: mouseVisible = True
+9.8221 	EXP 	window1: mouseVisible = True
+9.8224 	EXP 	window1: mouseVisible = True
+9.8227 	EXP 	window1: mouseVisible = True
+9.8266 	EXP 	window1: mouseVisible = True
+9.8267 	EXP 	window1: mouseVisible = True
+9.8270 	EXP 	window1: mouseVisible = True
+9.8273 	EXP 	window1: mouseVisible = True
+9.8335 	EXP 	window1: mouseVisible = True
+9.8336 	EXP 	window1: mouseVisible = True
+9.8339 	EXP 	window1: mouseVisible = True
+9.8342 	EXP 	window1: mouseVisible = True
+9.8382 	EXP 	window1: mouseVisible = True
+9.8383 	EXP 	window1: mouseVisible = True
+9.8386 	EXP 	window1: mouseVisible = True
+9.8388 	EXP 	window1: mouseVisible = True
+9.8450 	EXP 	window1: mouseVisible = True
+9.8451 	EXP 	window1: mouseVisible = True
+9.8454 	EXP 	window1: mouseVisible = True
+9.8457 	EXP 	window1: mouseVisible = True
+9.8496 	EXP 	window1: mouseVisible = True
+9.8497 	EXP 	window1: mouseVisible = True
+9.8500 	EXP 	window1: mouseVisible = True
+9.8503 	EXP 	window1: mouseVisible = True
+9.8565 	EXP 	window1: mouseVisible = True
+9.8566 	EXP 	window1: mouseVisible = True
+9.8569 	EXP 	window1: mouseVisible = True
+9.8572 	EXP 	window1: mouseVisible = True
+9.8611 	EXP 	window1: mouseVisible = True
+9.8612 	EXP 	window1: mouseVisible = True
+9.8614 	EXP 	window1: mouseVisible = True
+9.8617 	EXP 	window1: mouseVisible = True
+9.8767 	EXP 	window1: mouseVisible = True
+9.8768 	EXP 	window1: mouseVisible = True
+9.8771 	EXP 	window1: mouseVisible = True
+9.8774 	EXP 	window1: mouseVisible = True
+9.8813 	EXP 	window1: mouseVisible = True
+9.8814 	EXP 	window1: mouseVisible = True
+9.8817 	EXP 	window1: mouseVisible = True
+9.8820 	EXP 	window1: mouseVisible = True
+9.8854 	EXP 	window1: mouseVisible = True
+9.8855 	EXP 	window1: mouseVisible = True
+9.8858 	EXP 	window1: mouseVisible = True
+9.8860 	EXP 	window1: mouseVisible = True
+9.8899 	EXP 	window1: mouseVisible = True
+9.8900 	EXP 	window1: mouseVisible = True
+9.8903 	EXP 	window1: mouseVisible = True
+9.8905 	EXP 	window1: mouseVisible = True
+9.8941 	EXP 	window1: mouseVisible = True
+9.8941 	EXP 	window1: mouseVisible = True
+9.8944 	EXP 	window1: mouseVisible = True
+9.8947 	EXP 	window1: mouseVisible = True
+9.8986 	EXP 	window1: mouseVisible = True
+9.8986 	EXP 	window1: mouseVisible = True
+9.8989 	EXP 	window1: mouseVisible = True
+9.8992 	EXP 	window1: mouseVisible = True
+9.9027 	EXP 	window1: mouseVisible = True
+9.9028 	EXP 	window1: mouseVisible = True
+9.9031 	EXP 	window1: mouseVisible = True
+9.9033 	EXP 	window1: mouseVisible = True
+9.9077 	EXP 	window1: mouseVisible = True
+9.9088 	EXP 	window1: mouseVisible = True
+9.9670 	EXP 	Question text: Preferred hand
+9.9671 	EXP 	window1: mouseVisible = True
+9.9671 	EXP 	window1: mouseVisible = True
+9.9675 	EXP 	window1: mouseVisible = True
+9.9677 	EXP 	window1: mouseVisible = True
+9.9714 	EXP 	window1: mouseVisible = True
+9.9715 	EXP 	window1: mouseVisible = True
+9.9718 	EXP 	window1: mouseVisible = True
+9.9721 	EXP 	window1: mouseVisible = True
+10.0282 	EXP 	window1: mouseVisible = True
+10.0288 	EXP 	window1: mouseVisible = True
+10.0290 	EXP 	window1: mouseVisible = True
+10.0301 	EXP 	window1: mouseVisible = True
+10.0302 	EXP 	window1: mouseVisible = True
+10.0305 	EXP 	window1: mouseVisible = True
+10.0308 	EXP 	window1: mouseVisible = True
+10.0377 	EXP 	window1: mouseVisible = True
+10.0378 	EXP 	window1: mouseVisible = True
+10.0381 	EXP 	window1: mouseVisible = True
+10.0383 	EXP 	window1: mouseVisible = True
+10.0470 	EXP 	window1: mouseVisible = True
+10.0471 	EXP 	window1: mouseVisible = True
+10.0474 	EXP 	window1: mouseVisible = True
+10.0477 	EXP 	window1: mouseVisible = True
+10.0542 	EXP 	window1: mouseVisible = True
+10.0543 	EXP 	window1: mouseVisible = True
+10.0545 	EXP 	window1: mouseVisible = True
+10.0548 	EXP 	window1: mouseVisible = True
+10.0582 	EXP 	window1: mouseVisible = True
+10.0583 	EXP 	window1: mouseVisible = True
+10.0586 	EXP 	window1: mouseVisible = True
+10.0589 	EXP 	window1: mouseVisible = True
+10.0624 	EXP 	window1: mouseVisible = True
+10.0625 	EXP 	window1: mouseVisible = True
+10.0627 	EXP 	window1: mouseVisible = True
+10.0630 	EXP 	window1: mouseVisible = True
+10.0666 	EXP 	window1: mouseVisible = True
+10.0675 	EXP 	window1: mouseVisible = True
+10.0767 	EXP 	Question text: Preferred ear to listen to
+10.0768 	EXP 	window1: mouseVisible = True
+10.0768 	EXP 	window1: mouseVisible = True
+10.0771 	EXP 	window1: mouseVisible = True
+10.0774 	EXP 	window1: mouseVisible = True
+10.0858 	EXP 	window1: mouseVisible = True
+10.0858 	EXP 	window1: mouseVisible = True
+10.0861 	EXP 	window1: mouseVisible = True
+10.0864 	EXP 	window1: mouseVisible = True
+10.0900 	EXP 	window1: mouseVisible = True
+10.0905 	EXP 	window1: mouseVisible = True
+10.0907 	EXP 	window1: mouseVisible = True
+10.0917 	EXP 	window1: mouseVisible = True
+10.0917 	EXP 	window1: mouseVisible = True
+10.0920 	EXP 	window1: mouseVisible = True
+10.0923 	EXP 	window1: mouseVisible = True
+10.0959 	EXP 	window1: mouseVisible = True
+10.0959 	EXP 	window1: mouseVisible = True
+10.0962 	EXP 	window1: mouseVisible = True
+10.0965 	EXP 	window1: mouseVisible = True
+10.1000 	EXP 	window1: mouseVisible = True
+10.1001 	EXP 	window1: mouseVisible = True
+10.1004 	EXP 	window1: mouseVisible = True
+10.1006 	EXP 	window1: mouseVisible = True
+10.1042 	EXP 	window1: mouseVisible = True
+10.1042 	EXP 	window1: mouseVisible = True
+10.1045 	EXP 	window1: mouseVisible = True
+10.1048 	EXP 	window1: mouseVisible = True
+10.1083 	EXP 	window1: mouseVisible = True
+10.1084 	EXP 	window1: mouseVisible = True
+10.1087 	EXP 	window1: mouseVisible = True
+10.1090 	EXP 	window1: mouseVisible = True
+10.1127 	EXP 	window1: mouseVisible = True
+10.1128 	EXP 	window1: mouseVisible = True
+10.1130 	EXP 	window1: mouseVisible = True
+10.1133 	EXP 	window1: mouseVisible = True
+10.1170 	EXP 	window1: mouseVisible = True
+10.1180 	EXP 	window1: mouseVisible = True
+10.1277 	EXP 	window1: mouseVisible = True
+10.1278 	EXP 	window1: mouseVisible = True
+10.1288 	EXP 	window1: mouseVisible = True
+10.1297 	EXP 	window1: mouseVisible = True
+10.1310 	EXP 	window1: mouseVisible = True
+10.1312 	EXP 	window1: mouseVisible = True
+10.1703 	EXP 	Created form = <psychopy.visual.form.Form object at 0x7fc16a4ebe50>
+10.4358 	EXP 	window1: mouseVisible = True
+10.4476 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text', opacity=1.0, ori=0.0, pos=array([ 0.  , -0.45]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+10.4478 	EXP 	window1: mouseVisible = True
+10.4479 	EXP 	window1: mouseVisible = True
+10.4482 	EXP 	window1: mouseVisible = True
+10.4485 	EXP 	window1: mouseVisible = True
+10.4884 	EXP 	window1: mouseVisible = True
+10.4885 	EXP 	window1: mouseVisible = True
+10.4888 	EXP 	window1: mouseVisible = True
+10.4891 	EXP 	window1: mouseVisible = True
+10.4969 	EXP 	window1: mouseVisible = True
+10.7629 	EXP 	window1: mouseVisible = True
+10.7652 	EXP 	Created text_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text_2', opacity=1.0, ori=0.0, pos=array([ 0. , -0.4]), rgb=UNKNOWN, text="Press 'Space' to continue.", units='height', win=Window(...), wrapWidth=1)
+10.7697 	EXP 	Imported /Users/hassan.491/Library/Mobile Documents/com~apple~Numbers/Documents/formItems 2.csv as conditions, 1 conditions, 13 params
+10.7702 	EXP 	Question text: What did she have in greasy wash water all year?
+10.7703 	EXP 	window1: mouseVisible = True
+10.7704 	EXP 	window1: mouseVisible = True
+10.7707 	EXP 	window1: mouseVisible = True
+10.7710 	EXP 	window1: mouseVisible = True
+10.7799 	EXP 	window1: mouseVisible = True
+10.7800 	EXP 	window1: mouseVisible = True
+10.7803 	EXP 	window1: mouseVisible = True
+10.7805 	EXP 	window1: mouseVisible = True
+10.7842 	EXP 	window1: mouseVisible = True
+10.7847 	EXP 	window1: mouseVisible = True
+10.7849 	EXP 	window1: mouseVisible = True
+10.7860 	EXP 	window1: mouseVisible = True
+10.7861 	EXP 	window1: mouseVisible = True
+10.7864 	EXP 	window1: mouseVisible = True
+10.7866 	EXP 	window1: mouseVisible = True
+10.7930 	EXP 	window1: mouseVisible = True
+10.7931 	EXP 	window1: mouseVisible = True
+10.7934 	EXP 	window1: mouseVisible = True
+10.7937 	EXP 	window1: mouseVisible = True
+10.7972 	EXP 	window1: mouseVisible = True
+10.7973 	EXP 	window1: mouseVisible = True
+10.7976 	EXP 	window1: mouseVisible = True
+10.7979 	EXP 	window1: mouseVisible = True
+10.8042 	EXP 	window1: mouseVisible = True
+10.8043 	EXP 	window1: mouseVisible = True
+10.8046 	EXP 	window1: mouseVisible = True
+10.8049 	EXP 	window1: mouseVisible = True
+10.8085 	EXP 	window1: mouseVisible = True
+10.8086 	EXP 	window1: mouseVisible = True
+10.8089 	EXP 	window1: mouseVisible = True
+10.8092 	EXP 	window1: mouseVisible = True
+10.8128 	EXP 	window1: mouseVisible = True
+10.8129 	EXP 	window1: mouseVisible = True
+10.8132 	EXP 	window1: mouseVisible = True
+10.8135 	EXP 	window1: mouseVisible = True
+10.8170 	EXP 	window1: mouseVisible = True
+10.8170 	EXP 	window1: mouseVisible = True
+10.8173 	EXP 	window1: mouseVisible = True
+10.8176 	EXP 	window1: mouseVisible = True
+10.8213 	EXP 	window1: mouseVisible = True
+10.8214 	EXP 	window1: mouseVisible = True
+10.8217 	EXP 	window1: mouseVisible = True
+10.8220 	EXP 	window1: mouseVisible = True
+10.8256 	EXP 	window1: mouseVisible = True
+10.8267 	EXP 	window1: mouseVisible = True
+10.8393 	EXP 	window1: mouseVisible = True
+10.8395 	EXP 	window1: mouseVisible = True
+10.8404 	EXP 	window1: mouseVisible = True
+10.8414 	EXP 	window1: mouseVisible = True
+10.8427 	EXP 	window1: mouseVisible = True
+10.8429 	EXP 	window1: mouseVisible = True
+10.8471 	EXP 	Created form_2 = <psychopy.visual.form.Form object at 0x7fc16a793c10>
+11.1296 	EXP 	window1: mouseVisible = True
+11.1298 	EXP 	window1: mouseVisible = True
+11.1301 	EXP 	window1: mouseVisible = True
+11.1314 	EXP 	window1: mouseVisible = True
+11.1824 	EXP 	window1: mouseVisible = True
+11.1825 	EXP 	window1: mouseVisible = True
+11.1829 	EXP 	window1: mouseVisible = True
+11.1832 	EXP 	window1: mouseVisible = True
+11.1912 	EXP 	window1: mouseVisible = True
+11.1913 	EXP 	window1: mouseVisible = True
+11.1916 	EXP 	window1: mouseVisible = True
+11.1919 	EXP 	window1: mouseVisible = True
+11.2008 	EXP 	window1: mouseVisible = True
+11.2009 	EXP 	window1: mouseVisible = True
+11.2012 	EXP 	window1: mouseVisible = True
+11.2015 	EXP 	window1: mouseVisible = True
+0.0065 	EXP 	unnamed Form: autoLog = True
+0.0065 	EXP 	form: name = 'form'
+0.0065 	EXP 	form: depth = 0
+0.0065 	EXP 	form: fillColor = <class 'numpy.ndarray'>
+0.0065 	EXP 	form: borderColor = <class 'numpy.ndarray'>
+0.0065 	EXP 	form: fillColor = [0.89, 0.89, 0.89]
+0.0065 	EXP 	form: borderColor = <class 'numpy.ndarray'>
+0.0065 	EXP 	unnamed Form: autoLog = True
+0.0065 	EXP 	form_2: name = 'form_2'
+0.0065 	EXP 	form_2: depth = 0
+0.0065 	EXP 	form_2: fillColor = <class 'numpy.ndarray'>
+0.0065 	EXP 	form_2: borderColor = <class 'numpy.ndarray'>
+0.0065 	EXP 	form_2: fillColor = [0.89, 0.89, 0.89]
+0.0065 	EXP 	form_2: borderColor = <class 'numpy.ndarray'>
+0.0065 	EXP 	textbox: autoLog = True
+0.0065 	EXP 	textbox_2: autoLog = True
+0.0228 	EXP 	WelcomeText: autoDraw = True
+5.0064 	EXP 	WelcomeText: autoDraw = False
+5.6716 	WARNING 	t of last frame was 185.65ms (=1/5)
+5.6716 	EXP 	form: autoDraw = True
+5.6716 	EXP 	text: autoDraw = True
+5.7902 	WARNING 	t of last frame was 118.57ms (=1/8)
+5.9146 	WARNING 	t of last frame was 124.34ms (=1/8)
+6.0349 	WARNING 	t of last frame was 120.37ms (=1/8)
+6.1556 	WARNING 	Multiple dropped frames have occurred - I'll stop bothering you about them!
+11.1933 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.2921 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.2936 	DATA 	Mouse: wheel shift=(0,1), pos=(690,579)
+11.3149 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.3291 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.3493 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.4143 	DATA 	Mouse: wheel shift=(0,1), pos=(690,579)
+11.4357 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.4497 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.4562 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.5347 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.5565 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.5707 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.5911 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.6561 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.6773 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.6912 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.7114 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.7763 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+11.7976 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+12.1715 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+12.1916 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+12.2568 	DATA 	Mouse: wheel shift=(0,3), pos=(690,579)
+12.2781 	DATA 	Mouse: wheel shift=(0,1), pos=(690,579)
+12.2922 	DATA 	Mouse: wheel shift=(0,1), pos=(690,579)
+12.3124 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+12.3775 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+12.3776 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+12.3782 	DATA 	Mouse: wheel shift=(0,1), pos=(690,579)
+12.3784 	DATA 	Mouse: wheel shift=(0,2), pos=(690,579)
+12.3999 	DATA 	Mouse: wheel shift=(0,1), pos=(690,579)
+12.4139 	DATA 	Mouse: wheel shift=(0,1), pos=(690,579)
+12.4202 	DATA 	Mouse: wheel shift=(0,1), pos=(690,579)
+12.4990 	DATA 	Mouse: wheel shift=(0,5), pos=(690,579)
+12.5205 	DATA 	Mouse: wheel shift=(0,1), pos=(690,579)
+12.5405 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+12.5543 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+12.6193 	DATA 	Mouse: wheel shift=(0,2), pos=(690,579)
+12.6405 	DATA 	Mouse: wheel shift=(0,0), pos=(690,579)
+15.6533 	DATA 	Mouse: Left button down, pos=(402,597)
+15.7765 	DATA 	Mouse:  Left button up, pos=(402,597)
+18.3420 	DATA 	Mouse: Left button down, pos=(858,327)
+18.3994 	DATA 	Mouse:  Left button up, pos=(858,327)
+19.7137 	DATA 	Mouse: Left button down, pos=(1203,708)
+21.3450 	DATA 	Mouse:  Left button up, pos=(1210,472)
+22.6901 	DATA 	Mouse: Left button down, pos=(404,306)
+22.7122 	DATA 	Mouse:  Left button up, pos=(404,305)
+23.6039 	DATA 	Mouse: Left button down, pos=(412,293)
+23.6946 	DATA 	Mouse:  Left button up, pos=(412,292)
+25.3751 	DATA 	Mouse: Left button down, pos=(405,289)
+25.5667 	DATA 	Mouse:  Left button up, pos=(405,289)
+41.5255 	DATA 	Mouse: Left button down, pos=(1208,447)
+44.3277 	DATA 	Mouse:  Left button up, pos=(1210,182)
+45.6091 	DATA 	Mouse: Left button down, pos=(411,262)
+45.6895 	DATA 	Mouse:  Left button up, pos=(411,262)
+47.7961 	DATA 	Mouse: Left button down, pos=(410,263)
+47.9438 	DATA 	Mouse:  Left button up, pos=(410,263)
+49.0738 	DATA 	Mouse: wheel shift=(0,0), pos=(630,223)
+49.0979 	DATA 	Mouse: wheel shift=(0,0), pos=(630,223)
+49.1639 	DATA 	Mouse: wheel shift=(0,-2), pos=(630,223)
+49.1856 	DATA 	Mouse: wheel shift=(0,0), pos=(630,223)
+49.1995 	DATA 	Mouse: wheel shift=(0,0), pos=(630,223)
+49.2098 	DATA 	Mouse: wheel shift=(0,0), pos=(630,223)
+49.2231 	DATA 	Mouse: wheel shift=(0,0), pos=(630,223)
+49.2888 	DATA 	Mouse: wheel shift=(0,0), pos=(630,223)
+49.2890 	DATA 	Mouse: wheel shift=(0,0), pos=(630,223)
+49.6930 	DATA 	Keypress: space
+49.7529 	EXP 	form: autoDraw = False
+49.7529 	EXP 	text: autoDraw = False
+60.2349 	EXP 	text_2: autoDraw = True
+67.6865 	DATA 	Mouse: Left button down, pos=(674,294)
+67.9644 	EXP 	window1: mouseVisible = True
