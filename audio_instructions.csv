@@ -1,0 +1,3 @@
+﻿instruction,image_path,audio_path_0,audio_path_1,audio_path_2,audio_path_3,audio_path_4,audio_path_5,volume_0,volume_1,volume_2,volume_3,volume_4,volume_5
+fake inst,images/TheOhioStateUniversity-Stacked.jpg,file_example_MP3_700KB.mp3,file_example_MP3_700KB.mp4,file_example_MP3_700KB.mp5,file_example_MP3_700KB.mp6,file_example_MP3_700KB.mp7,file_example_MP3_700KB.mp8,100,60,60,60,60,60
+fake inst 2,images/TheOhioStateUniversity-Stacked.jpg,file_example_MP3_700KB.mp3,file_example_MP3_700KB.mp4,file_example_MP3_700KB.mp5,file_example_MP3_700KB.mp6,file_example_MP3_700KB.mp7,file_example_MP3_700KB.mp8,100,60,60,60,60,60
