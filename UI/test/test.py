@@ -106,7 +106,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version='',
         extraInfo=expInfo, runtimeInfo=None,
-        originPath='/Users/hassan.491/Workstation/Research/AAD Experiments/test/test.py',
+        originPath='C:/Codes/eeg_interface/UI/test/test.py',
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -319,7 +319,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     # --- Initialize components for Routine "UserData" ---
     win.allowStencil = True
     form = visual.Form(win=win, name='form',
-        items='/Users/hassan.491/Library/Mobile Documents/com~apple~Numbers/Documents/formItems.csv',
+        items='C:/Codes/eeg_interface/UI/test/demographic.csv',
         textHeight=0.03,
         font='Open Sans',
         randomize=False,
@@ -372,7 +372,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     # --- Initialize components for Routine "QA" ---
     win.allowStencil = True
     form_2 = visual.Form(win=win, name='form_2',
-        items='/Users/hassan.491/Library/Mobile Documents/com~apple~Numbers/Documents/formItems 2.csv',
+        items='demographic.csv',
         textHeight=0.03,
         font='Open Sans',
         randomize=False,

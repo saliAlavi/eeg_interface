@@ -1,0 +1,13 @@
+1.4426 	WARNING 	Monitor specification not found. Creating a temporary one...
+6.7670 	WARNING 	User requested fullscreen with size [1470  956], but screen is actually [1920, 1080]. Using actual size
+8.3229 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=True, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000210086AE200>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000210086AE1A0>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=True, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000021007C2B6D0>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1080]), stencilBits=8, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+8.3230 	EXP 	window1: backgroundImage = ''
+8.3230 	EXP 	window1: backgroundFit = 'none'
+8.3253 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+8.3253 	EXP 	window1: recordFrameIntervals = False
+8.4885 	EXP 	window1: recordFrameIntervals = True
+8.6715 	EXP 	Screen (0) actual frame rate measured at 60.17Hz
+8.6716 	EXP 	window1: recordFrameIntervals = False
+8.8358 	EXP 	test: status = STARTED
+8.8917 	EXP 	Created WelcomeText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='WelcomeText', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+8.9962 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
