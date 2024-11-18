@@ -32,9 +32,15 @@ class TrialDisplayUI(QMainWindow):
         if not os.path.exists(self.answer_file):
             with open(self.answer_file, "w") as f:
                 json.dump([], f)  # Initialize with an empty list
+       
+        # Retrieve all audio devices
+        devices = sd.query_devices()
 
-        # Manually specify device IDs for playback
-        self.device_ids = [0, 1, 4]  # Replace with the IDs of your audio devices
+        # Find devices with "Eris 3.5BT" in their name
+        # self.device_ids = [0, 1, 4]
+        self.device_ids = [
+            i for i, device in enumerate(devices) if "Eris 3.5BT" in device['name']
+        ]
 
         # Initialize UI elements
         self.initUI()
