@@ -156,30 +156,16 @@ class TrialDisplayUI(QMainWindow):
         )
 
         trial = self.trials_data.iloc[self.current_trial_index]
-        attended_speaker = int(trial['Attended Speaker'])  # Ensure this is an integer
         is_correct = 0  # Default to incorrect
-        attended_to_speaker = None  # Default to None
 
         # Determine if the answer is correct and calculate "Attended to Speaker"
         if selected_button:
             role = self.option_roles.get(selected_button, None)
             if role == "Correct":
                 is_correct = 1
-                attended_to_speaker = attended_speaker
                 self.showMessage("Correct Answer")
-            elif role == "Incorrect 1":
-                attended_to_speaker = 1 if attended_speaker == 2 else 2 if attended_speaker == 1 else 1
-                self.showMessage("Incorrect Answer. Please listen carefully.")
-            elif role == "Incorrect 2":
-                attended_to_speaker = 3 if attended_speaker == 2 else 2 if attended_speaker == 1 else 3
-                self.showMessage("Incorrect Answer. Please listen carefully.")
-            elif role == "Incorrect 3":
-                attended_to_speaker = 4 if attended_speaker == 2 else 4 if attended_speaker == 1 else 4
-                self.showMessage("Incorrect Answer. Please listen carefully.")
-            elif role == "No Attention":
-                attended_to_speaker = None  # Do not set a speaker
             else:
-                attended_to_speaker = None
+                self.showMessage("Incorrect Answer. Please listen carefully.")
 
         # Add trial data to JSON
         answer_data = {
@@ -187,7 +173,6 @@ class TrialDisplayUI(QMainWindow):
             "Question": trial['Question'],
             "Selected Answer": selected_answer,
             "Correct": is_correct,
-            "Possibility of attending to Speaker": attended_to_speaker,
         }
         self.append_to_json(answer_data)
 
