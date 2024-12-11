@@ -116,7 +116,7 @@ class Recorder():
         self.stop_event.set()
 
     def stop_recording(self):
-        sekf.stop
+        self.stop
 
     def start_recording(self):
         pass

@@ -1,0 +1,7 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticMode": "workspace",
+    "python.formatting.provider": "black",
+    "python.languageServer": "Pylance",
+    "python.sortImports.path": "isort",
+}

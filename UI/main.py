@@ -15,7 +15,7 @@ def main():
 
     # Generate unique ID and folder
     unique_id = str(uuid.uuid4())[:8]
-    data_directory = "./data"
+    data_directory = "./experiment_data"
     participant_folder = os.path.join(data_directory, unique_id)
     os.makedirs(participant_folder, exist_ok=True)
 
