@@ -43,6 +43,7 @@ class Recorder():
 
 
     async def record_gaze(self):
+        timestamps=[]
         file_dir = os.path.join(self.configs['save_dir'], 'gaze_data.p')
         file = open(file_dir,'wb')
         self.log('HERE')
@@ -65,11 +66,13 @@ class Recorder():
 
                         # If given gaze data
                         if "gaze2d" in gaze:
-                            self.save_var({'gaze_ts':gaze_timestamp, 'gaze2d':gaze['gaze2d']}, file)
+                            timestamps.append({'gaze_ts':gaze_timestamp, 'gaze2d':gaze['gaze2d']})
+                            # self.save_var({'gaze_ts':gaze_timestamp, 'gaze2d':gaze['gaze2d']}, file)
 
                     time_end = time.time()
                     self.log(f'Running time: {time_end-time_start}')
 
+        self.save_var(timestamps, file)
         file.close()
 
     async def read_single_eeg(self, inlet):
@@ -92,16 +95,17 @@ class Recorder():
             # get a new sample (you can also omit the timestamp part if you're not
             # interested in it)
             # sample, timestamp = inlet.pull_sample()
-            sample, timestamp = await self.read_single_eeg(inlet)
+            sample, eeg_timestamp = await self.read_single_eeg(inlet)
             # sample, timestamp = await self.read_single_eeg(inlet)
             # sample, timestamps = await self.loop.run_in_executor(None, inlet.pull_sample)
-            timestamps.append(timestamp)
+            timestamps.append({"eeg_ts": eeg_timestamp, "sample": sample})
             # self.log(f'Freq {ctr//sr}')
             if ctr%(self.configs['print_every']* sr)==0 and (ctr//sr)>0:
-                self.log(f'EEG: {timestamp}, {sample}')
+                self.log(f'EEG: {eeg_timestamp}, {sample}')
                 self.log(f'Event: {self.stop_event}')
                 # break
             ctr+=1
+        self.save_var(timestamps, file)
             
 
     @staticmethod
@@ -125,7 +129,7 @@ class Recorder():
         #asyncio.run(access_recordings())
         # await asyncio.gather(asyncio.to_thread(self.record_eeg()), asyncio.to_thread(self.record_gaze()), asyncio.to_thread(self.stop_recording()))
         self.loop = asyncio.get_event_loop()
-        events = [self.record_eeg(), self.record_gaze(), self.test_stop_recording()]
+        events = [self.record_eeg(), self.record_gaze()]
         await asyncio.gather(*events)
         # self.loop.run_until_complete(asyncio.gather(*events))
 

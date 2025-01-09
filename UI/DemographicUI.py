@@ -203,7 +203,7 @@ class DemographicUI(QMainWindow):
     def resizeEvent(self, event):
         # Dynamically adjust font size based on the window's width
         window_width = self.width()
-        font_size = max(10, window_width // 70)  # Example scaling factor
+        font_size = max(10, window_width // 100)  # Example scaling factor
         font = QFont()
         font.setPointSize(font_size)
 

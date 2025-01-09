@@ -47,10 +47,10 @@ class TrialDisplayUI(QMainWindow):
         print(devices)
 
         # Find devices with "Eris 3.5BT" in their name
-        self.device_ids = [3, 1, 4]
-        # self.device_ids = [
-            # i for i, device in enumerate(devices) if "Eris 3.5BT" in device['name']
-        # ]
+        # self.device_ids = [3, 1, 4]
+        self.device_ids = [
+            i for i, device in enumerate(devices) if "Eris 3.5BT" in device['name']
+        ]
 
         # Initialize UI elements
         self.initUI()
@@ -368,12 +368,26 @@ class TrialDisplayUI(QMainWindow):
 
 
     def playAudio(self, audio_files):
+        timestamps = []
+        trial = self.trials_data.iloc[self.current_trial_index]
+        trial_no = int(trial['Trial No.'])  # Ensure it's an integer
+        trial_folder = os.path.join(self.participant_folder, f"Trial_{trial_no}")
+        timestamps_file = "/audio_timestamps.json"
         def play_on_device(audio_file, device_id):
             try:
                 file_path = f"{self.audio_dir}/{audio_file}"
                 data, samplerate = sf.read(file_path)
+                # start_time = time.time()
                 sd.play(data, samplerate=samplerate, device=device_id)
                 sd.wait()
+                # end_time = time.time()
+                # timestamps.append({
+                #     "audio_file": audio_file,
+                #     "device_id": device_id,
+                #     "start_time": start_time,
+                #     "end_time": end_time,
+                #     "duration": (end_time-start_time)
+                # })
             except Exception as e:
                 print(f"Error playing {audio_file} on device {device_id}: {e}")
 
@@ -384,6 +398,10 @@ class TrialDisplayUI(QMainWindow):
             thread.start()
         for thread in threads:
             thread.join()
+
+        # Save timestamps
+        # with open(trial_folder+timestamps_file, 'w') as f:
+            # json.dump(timestamps, f, indent=4)
 
     def resizeEvent(self, event):
         # Dynamically adjust font size based on the window's width
