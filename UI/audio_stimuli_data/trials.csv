@@ -1,4 +1,9 @@
-Trial No.,Attended Speaker,Device-1,Device-2,Device-3,Question,Answer,Option-1,Option-2,Option-3
+Trial No.,Attended Speaker,Device-1,Device0,Device-3,Question,Answer,Option-1,Option-2,Option-3
+Training-1,1,Practice_17_345.flac,Practice_278_54.flac,Practice_Noise_505_527.flac,What does the creature demand?,A female companion.,Shelter with cottagers.,To be destroyed.,Guidance to live peacefully.
+Training-2,2,Practice_205_409.flac,Practice_353_439.flac,Practice_Noise_506_526.flac,What is the focus of the speech?,Balancing individuality and society.,Ensuring equality.,Government’s role.,Individual duties.
+Training-3,3,Practice_210_464.flac,Practice_369_475.flac,Practice_Noise_507_575.flac,What happens to Pinocchio?,"He comforts Geppetto, who is shivering.",He saves Geppetto from drowning.,He becomes a real boy.,He discovers land while swimming.
+Training-4,4,Practice_246_362.flac,Practice_451_70.flac,Practice_Noise_574_640.flac,"What is ""The Lion's Den”?",A section of the prison for the most dangerous prisoners.,A courtroom for dangerous criminals.,A meeting place for prisoners to plan escapes.,A jail cell with softer treatment.
+Training-5,3,Practice_272_373.flac,Practice_459_480.flac,Practice_Noise_637_638.flac,What does the caterpillar ask Alice?,Who she is.,Why she is silent.,What she wants.,Where she is going.
 1,1,6637_4806.flac,4013_3171.flac,noise_431_497.flac,What did Raymond insist on providing for the person he was assisting?,Air,Food,Money,A banquet
 2,2,2570_7339.flac,6510_5809.flac,noise_189_453.flac,What caused the rapid desertion of the mansion?,The unexpected appearance of the Brigade of soldiers and the disclosure that followed.,A wishing carpet incident.,Fear of an attack from the convicts.,Spending the night in dangerous territory.
 3,3,8183_7445.flac,2741_3114.flac,noise_797_520.flac,How many sons did the king have?,11 sons,2 sons,5 sons,8 sons

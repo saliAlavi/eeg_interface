@@ -166,6 +166,11 @@ class TrialDisplayUI(QMainWindow):
         self.loadTrial()
 
     def loadTrial(self):
+
+        if self.current_trial_index == 55:
+            self.startBreak()
+            return
+
         if self.current_trial_index < len(self.trials_data):
             trial = self.trials_data.iloc[self.current_trial_index]
             self.trial_label.setText(f"Trial #{trial['Trial No.']}")
@@ -204,6 +209,36 @@ class TrialDisplayUI(QMainWindow):
                 button.hide()
             self.submit_button.hide()
 
+            
+    def startBreak(self):
+        """Start a 10-minute break."""
+        self.trial_label.setText("Break")
+        self.attended_label.setText("You have a 10-minute break. Please relax!")
+        self.play_button.hide()
+        self.question_label.hide()
+        for button in self.options_buttons:
+            button.hide()
+        self.submit_button.hide()
+
+        self.break_timer = QTimer(self)
+        self.break_timer.timeout.connect(self.updateBreakCountdown)
+        self.break_time_remaining = 10 * 60  # 10 minutes in seconds
+        self.updateBreakCountdown()  # Initial update
+        self.break_timer.start(1000)  # Update every second
+
+    def updateBreakCountdown(self):
+        """Update the break countdown timer."""
+        if self.break_time_remaining > 0:
+            minutes, seconds = divmod(self.break_time_remaining, 60)
+            self.attended_label.setText(
+                f"Break: {minutes:02d}:{seconds:02d} remaining. Please relax!"
+            )
+            self.break_time_remaining -= 1
+        else:
+            self.break_timer.stop()
+            self.current_trial_index += 1
+            self.loadTrial()  # Resume the trials
+
 
     def highlightSpeaker(self, speaker_index):
         # Validate speaker index
@@ -237,10 +272,7 @@ class TrialDisplayUI(QMainWindow):
 
     def playCurrentAudio(self):
         trial = self.trials_data.iloc[self.current_trial_index]
-        trial_no = int(trial['Trial No.'])  # Ensure it's an integer
-
-        # Create a directory for the current trial
-        trial_folder = os.path.join(self.participant_folder, f"Trial_{trial_no}")
+        trial_folder = os.path.join(self.participant_folder, "Eval-"+trial['Trial No.'])
         os.makedirs(trial_folder, exist_ok=True)
 
         # Initialize the Recorder for the current trial
@@ -327,7 +359,7 @@ class TrialDisplayUI(QMainWindow):
 
         # Add trial data to JSON
         answer_data = {
-            "Trial No.": int(trial['Trial No.']),  # Convert to standard int
+            "Trial No.": trial['Trial No.'],  # Convert to standard int
             "Question": trial['Question'],
             "Selected Answer": selected_answer,
             "Correct": is_correct,
@@ -368,11 +400,11 @@ class TrialDisplayUI(QMainWindow):
 
 
     def playAudio(self, audio_files):
-        timestamps = []
-        trial = self.trials_data.iloc[self.current_trial_index]
-        trial_no = int(trial['Trial No.'])  # Ensure it's an integer
-        trial_folder = os.path.join(self.participant_folder, f"Trial_{trial_no}")
-        timestamps_file = "/audio_timestamps.json"
+        # timestamps = []
+        # trial = self.trials_data.iloc[self.current_trial_index]
+        # trial_no = int(trial['Trial No.'])  # Ensure it's an integer
+        # trial_folder = os.path.join(self.participant_folder, f"Trial_{trial_no}")
+        # timestamps_file = "/audio_timestamps.json"
         def play_on_device(audio_file, device_id):
             try:
                 file_path = f"{self.audio_dir}/{audio_file}"
