@@ -359,7 +359,7 @@ class TrialDisplayUI(QMainWindow):
 
         # Add trial data to JSON
         answer_data = {
-            "Trial No.": trial['Trial No.'],  # Convert to standard int
+            "Trial No.": trial['Trial No.'],
             "Question": trial['Question'],
             "Selected Answer": selected_answer,
             "Correct": is_correct,
