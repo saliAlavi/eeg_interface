@@ -128,6 +128,8 @@ class DemographicUI(QMainWindow):
         # Validate gender
         gender = self.get_selected_button_text(self.gender_group, self.gender_other_input)
         if gender == "Not selected":
+            gender = self.gender_other_input.text()
+        if not gender:
             self.show_error_message("Please select your gender.")
             return
 
@@ -139,7 +141,8 @@ class DemographicUI(QMainWindow):
 
         # Validate race and ethnicity
         race_ethnicity = self.get_selected_checkboxes(self.race_checkboxes, self.race_other_input)
-        if not race_ethnicity:
+        race_ethnicity_other = self.race_other_input.text()
+        if not race_ethnicity and not race_ethnicity_other:
             self.show_error_message("Please select at least one option for race and ethnicity.")
             return
 
