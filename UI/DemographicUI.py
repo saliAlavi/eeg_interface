@@ -138,6 +138,9 @@ class DemographicUI(QMainWindow):
         if not age.isdigit() or int(age) <= 0:
             self.show_error_message("Please enter a valid age.")
             return
+        if int(age) < 18:
+            self.show_error_message("You must be at least 18 years old to participate in the experiment.")
+            return
 
         # Validate race and ethnicity
         race_ethnicity = self.get_selected_checkboxes(self.race_checkboxes, self.race_other_input)

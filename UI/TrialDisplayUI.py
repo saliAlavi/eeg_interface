@@ -14,6 +14,7 @@ import threading
 import random
 from record_signals import Recorder
 import asyncio
+from PySide6.QtWidgets import QApplication  # Add this import if not already present
 
 
 class TrialDisplayUI(QMainWindow):
@@ -47,10 +48,10 @@ class TrialDisplayUI(QMainWindow):
         print(devices)
 
         # Find devices with "Eris 3.5BT" in their name
-        # self.device_ids = [3, 1, 4]
-        self.device_ids = [
-            i for i, device in enumerate(devices) if "Eris 3.5BT" in device['name']
-        ]
+        self.device_ids = [0, 1, 3]
+        # self.device_ids = [
+        #     i for i, device in enumerate(devices) if "Eris 3.5BT" in device['name']
+        # ]
 
         # Initialize UI elements
         self.initUI()
@@ -167,13 +168,12 @@ class TrialDisplayUI(QMainWindow):
 
     def loadTrial(self):
 
-        if self.current_trial_index == 55:
-            self.startBreak()
-            return
-
         if self.current_trial_index < len(self.trials_data):
             trial = self.trials_data.iloc[self.current_trial_index]
-            self.trial_label.setText(f"Trial #{trial['Trial No.']}")
+            if self.current_trial_index<5:
+                self.trial_label.setText(f"<span style='font-weight: bold;'>This a training trial to make you become familiar with the experiment.</span>")
+            else:
+                self.trial_label.setText(f"Trial #<span style='font-weight: bold;'>{trial['Trial No.']}</span>")
             # Assume the color mapping for speakers is defined
             color_map = {
                 1: "red",
@@ -209,20 +209,58 @@ class TrialDisplayUI(QMainWindow):
                 button.hide()
             self.submit_button.hide()
 
-            
-    def startBreak(self):
-        """Start a 10-minute break."""
-        self.trial_label.setText("Break")
-        self.attended_label.setText("You have a 10-minute break. Please relax!")
+    def startExp(self):
+        print("Starting Experiment...")  # Debugging
+        self.trial_label.setText(f"<span style='font-weight: bold;'>Training session is over. Now you are familiar with the experiment.</span>")
+        self.trial_label.show()  # Ensure the label is visible
+        self.attended_label.setText("<span style='font-weight:bold;'>The main experiment will start soon.</span>")
+        self.attended_label.show()  # Ensure the label is visible
         self.play_button.hide()
         self.question_label.hide()
         for button in self.options_buttons:
             button.hide()
         self.submit_button.hide()
 
+        # Start the exp timer
+        self.exp_time_remaining = 30  # 30 seconds
+        self.exp_timer = QTimer(self)
+        self.exp_timer.timeout.connect(self.updateExpCountdown)
+        self.updateExpCountdown()  # Initial update
+        self.exp_timer.start(1000)  # Update every second
+
+    def updateExpCountdown(self):
+        """Update the experiment countdown timer."""
+        if self.exp_time_remaining > 0:
+            minutes, seconds = divmod(self.exp_time_remaining, 60)
+            # print(f"Exp countdown: {minutes:02d}:{seconds:02d}")  # Debugging
+            self.attended_label.setText(
+                f"<span style='font-weight:bold;'>The main experiment will start in {minutes:02d}:{seconds:02d}.</span>"
+            )
+            self.exp_time_remaining -= 1
+            QApplication.processEvents()  # Force UI to update
+        else:
+            self.exp_timer.stop()
+            print("Experiment started.")  # Debugging
+            self.attended_label.setText("<span style='font-weight: bold;'>Please click 'Next' to start the main experiment. There will be a total of 100 trials.</span>")
+            self.showResumeButton()  # Show the resume button
+
+    def startBreak(self):
+        """Start a 10-minute break."""
+        print("Starting break...")  # Debugging
+        self.trial_label.setText("Break")
+        self.trial_label.show()  # Ensure the label is visible
+        self.attended_label.setText("You have a 10-minute break. Please relax!")
+        self.attended_label.show()  # Ensure the label is visible
+        self.play_button.hide()
+        self.question_label.hide()
+        for button in self.options_buttons:
+            button.hide()
+        self.submit_button.hide()
+
+        # Start the break timer
+        self.break_time_remaining = 10*60  # 10 minutes in seconds
         self.break_timer = QTimer(self)
         self.break_timer.timeout.connect(self.updateBreakCountdown)
-        self.break_time_remaining = 10 * 60  # 10 minutes in seconds
         self.updateBreakCountdown()  # Initial update
         self.break_timer.start(1000)  # Update every second
 
@@ -230,14 +268,44 @@ class TrialDisplayUI(QMainWindow):
         """Update the break countdown timer."""
         if self.break_time_remaining > 0:
             minutes, seconds = divmod(self.break_time_remaining, 60)
+            # print(f"Break countdown: {minutes:02d}:{seconds:02d}")  # Debugging
             self.attended_label.setText(
                 f"Break: {minutes:02d}:{seconds:02d} remaining. Please relax!"
             )
             self.break_time_remaining -= 1
+            QApplication.processEvents()  # Force UI to update
         else:
             self.break_timer.stop()
-            self.current_trial_index += 1
-            self.loadTrial()  # Resume the trials
+            print("Break ended.")  # Debugging
+            self.attended_label.setText("Break is over. Please click 'Next' to continue.")
+            self.showResumeButton()  # Show the resume button
+
+    def showResumeButton(self):
+        """Show a button to resume trials after the break."""
+        self.resume_button = QPushButton("Next")
+        self.resume_button.setStyleSheet("""
+            QPushButton {
+                background-color: #198c87;
+                color: white;
+                border: 2px solid #2980b9;
+                border-radius: 5px;
+                padding: 5px;
+            }
+            QPushButton:hover {
+                background-color: #f96905;
+            }
+            QPushButton:pressed {
+                background-color: #f95a05;
+            }
+        """)
+        self.resume_button.clicked.connect(self.resumeTrials)
+        self.layout.addWidget(self.resume_button)
+
+    def resumeTrials(self):
+        """Resume trials after the break."""
+        self.layout.removeWidget(self.resume_button)  # Remove the resume button
+        self.resume_button.deleteLater()
+        self.loadTrial()  # Load the next trial
 
 
     def highlightSpeaker(self, speaker_index):
@@ -272,10 +340,13 @@ class TrialDisplayUI(QMainWindow):
 
     def playCurrentAudio(self):
         trial = self.trials_data.iloc[self.current_trial_index]
-        trial_folder = os.path.join(self.participant_folder, "Eval-"+trial['Trial No.'])
+        if self.current_trial_index<5:
+            trial_folder = os.path.join(self.participant_folder, trial['Trial No.'])
+        else:
+            trial_folder = os.path.join(self.participant_folder, "Eval-"+trial['Trial No.'])
         os.makedirs(trial_folder, exist_ok=True)
 
-        # Initialize the Recorder for the current trial
+        # Initialize the Recorder for the current trial -- EEG Recorder
         self.recorder = Recorder({
             'save_dir': trial_folder,  # Save EEG and gaze data in trial-specific folder
             'sr_eeg': 512,
@@ -284,14 +355,15 @@ class TrialDisplayUI(QMainWindow):
         })
 
         audio_files = [trial['Device-1'], trial['Device-2'], trial['Device-3']]
-        # Start a thread for recording EEG and gaze
+
+        # Start a thread for recording EEG and gaze -- EEG Recorder
         recording_thread = threading.Thread(target=self.recordData)
         recording_thread.start()
 
         # Play audio on the main thread
         self.playAudio(audio_files)
 
-        # Signal to stop recording once playback is complete
+        # Signal to stop recording once playback is complete -- EEG Recorder
         self.recorder.stop_event.set()
         recording_thread.join()  # Wait for the recording thread to finish
 
@@ -368,7 +440,15 @@ class TrialDisplayUI(QMainWindow):
 
         # Move to the next trial
         self.current_trial_index += 1
-        self.loadTrial()
+
+        if self.current_trial_index == 54:
+            self.startBreak()
+            return
+        elif self.current_trial_index == 5:
+            self.startExp()
+            return
+        else:
+            self.loadTrial()
 
 
 
@@ -393,6 +473,7 @@ class TrialDisplayUI(QMainWindow):
         except Exception as e:
             print(f"Error writing to JSON file: {e}")
 
+    # EEG Recorder
     def recordData(self):
         """Runs the Recorder's main function."""
         self.recorder.stop_event.clear()  # Ensure the recorder is ready to record
