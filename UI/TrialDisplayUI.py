@@ -48,10 +48,10 @@ class TrialDisplayUI(QMainWindow):
         print(devices)
 
         # Find devices with "Eris 3.5BT" in their name
-        self.device_ids = [0, 1, 3]
-        # self.device_ids = [
-        #     i for i, device in enumerate(devices) if "Eris 3.5BT" in device['name']
-        # ]
+        # self.device_ids = [0, 1, 3]
+        self.device_ids = [
+            i for i, device in enumerate(devices) if "Eris 3.5BT" in device['name']
+        ]
 
         # Initialize UI elements
         self.initUI()
@@ -171,7 +171,7 @@ class TrialDisplayUI(QMainWindow):
         if self.current_trial_index < len(self.trials_data):
             trial = self.trials_data.iloc[self.current_trial_index]
             if self.current_trial_index<5:
-                self.trial_label.setText(f"<span style='font-weight: bold;'>This a training trial to make you become familiar with the experiment.</span>")
+                self.trial_label.setText(f"<span style='font-weight: bold;'>This is a training trial to make you become familiar with the experiment.</span>")
             else:
                 self.trial_label.setText(f"Trial #<span style='font-weight: bold;'>{trial['Trial No.']}</span>")
             # Assume the color mapping for speakers is defined
@@ -349,8 +349,8 @@ class TrialDisplayUI(QMainWindow):
         # Initialize the Recorder for the current trial -- EEG Recorder
         self.recorder = Recorder({
             'save_dir': trial_folder,  # Save EEG and gaze data in trial-specific folder
-            'sr_eeg': 512,
-            'print_every': 100,
+            'sr_eeg': 500,
+            'print_every': 1,
             'verbose': True
         })
 
@@ -481,7 +481,7 @@ class TrialDisplayUI(QMainWindow):
 
 
     def playAudio(self, audio_files):
-        # timestamps = []
+        timestamps = []
         # trial = self.trials_data.iloc[self.current_trial_index]
         # trial_no = int(trial['Trial No.'])  # Ensure it's an integer
         # trial_folder = os.path.join(self.participant_folder, f"Trial_{trial_no}")
@@ -490,20 +490,24 @@ class TrialDisplayUI(QMainWindow):
             try:
                 file_path = f"{self.audio_dir}/{audio_file}"
                 data, samplerate = sf.read(file_path)
-                # start_time = time.time()
+                start_time = time.time()
                 sd.play(data, samplerate=samplerate, device=device_id)
+                playback =time.time()
+                print(f'audio startup ',(playback-start_time))
                 sd.wait()
-                # end_time = time.time()
-                # timestamps.append({
-                #     "audio_file": audio_file,
-                #     "device_id": device_id,
-                #     "start_time": start_time,
-                #     "end_time": end_time,
-                #     "duration": (end_time-start_time)
-                # })
+                end_time = time.time()
+                timestamps.append({
+                    "audio_file": audio_file,
+                    "device_id": device_id,
+                    "start_time": start_time,
+                    "end_time": end_time,
+                    "duration": (end_time-start_time)
+                })
+                
             except Exception as e:
                 print(f"Error playing {audio_file} on device {device_id}: {e}")
-
+                raise("ERROR")
+        
         threads = []
         for audio_file, device_id in zip(audio_files, self.device_ids):
             thread = threading.Thread(target=play_on_device, args=(audio_file, device_id))

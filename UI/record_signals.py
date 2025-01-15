@@ -20,7 +20,7 @@ G3_HOSTNAME='tg03b-080202040971'
 
 configs={
     'save_dir': os.path.join(pathlib.Path(__file__).parent.resolve(), 'recordings'),
-    'sr_eeg':512,
+    'sr_eeg':500,
     'print_every':1,
     'verbose':True
 }
