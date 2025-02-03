@@ -482,43 +482,75 @@ class TrialDisplayUI(QMainWindow):
 
     def playAudio(self, audio_files):
         timestamps = []
-        # trial = self.trials_data.iloc[self.current_trial_index]
-        # trial_no = int(trial['Trial No.'])  # Ensure it's an integer
-        # trial_folder = os.path.join(self.participant_folder, f"Trial_{trial_no}")
-        # timestamps_file = "/audio_timestamps.json"
-        def play_on_device(audio_file, device_id):
+        
+        # Pre-load all audio files into memory to avoid file I/O delays during playback
+        audio_data = []
+        for audio_file in audio_files:
+            file_path = f"{self.audio_dir}/{audio_file}"
+            data, samplerate = sf.read(file_path)
+            audio_data.append((data, samplerate))
+
+        # Event to trigger all threads to start at the same time
+        start_event = threading.Event()
+
+        def play_on_device(audio_data, device_id):
             try:
-                file_path = f"{self.audio_dir}/{audio_file}"
-                data, samplerate = sf.read(file_path)
+                data, samplerate = audio_data
+                
+                # Wait for all threads to be ready to play simultaneously
+                start_event.wait()
+
+                # Capture the time before starting playback
                 start_time = time.time()
+
+                # Start playing the audio on the specific device
                 sd.play(data, samplerate=samplerate, device=device_id)
-                playback =time.time()
-                print(f'audio startup ',(playback-start_time))
+
+                # Capture the time after calling sd.play()
+                playback_start_time = time.time()
+
+                # Calculate and print the startup time (time from calling sd.play to actual start)
+                startup_time = playback_start_time - start_time
+                print(f"Audio startup time: {startup_time:.6f} seconds (device {device_id})")
+
+                # Wait for the playback to finish
                 sd.wait()
+
+                # Record the end time after the audio finishes
                 end_time = time.time()
+
+                # Store the timestamps for each playback
                 timestamps.append({
-                    "audio_file": audio_file,
                     "device_id": device_id,
                     "start_time": start_time,
                     "end_time": end_time,
-                    "duration": (end_time-start_time)
+                    "duration": (end_time - start_time)
                 })
-                
+
             except Exception as e:
-                print(f"Error playing {audio_file} on device {device_id}: {e}")
-                raise("ERROR")
-        
+                print(f"Error playing audio on device {device_id}: {e}")
+
         threads = []
-        for audio_file, device_id in zip(audio_files, self.device_ids):
-            thread = threading.Thread(target=play_on_device, args=(audio_file, device_id))
+
+        # Create and start a thread for each audio file
+        for idx, audio_file in enumerate(audio_files):
+            thread = threading.Thread(target=play_on_device, args=(audio_data[idx], self.device_ids[idx]))
             threads.append(thread)
+            # thread.start()
+
+        for thread in threads:
             thread.start()
+
+        # Signal all threads to start playback at the same time
+        start_event.set()
+
+        # Wait for all threads to finish before continuing
         for thread in threads:
             thread.join()
 
-        # Save timestamps
-        # with open(trial_folder+timestamps_file, 'w') as f:
-            # json.dump(timestamps, f, indent=4)
+        print("All audio playback complete.")
+
+
 
     def resizeEvent(self, event):
         # Dynamically adjust font size based on the window's width
