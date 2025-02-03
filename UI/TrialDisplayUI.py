@@ -15,6 +15,7 @@ import random
 from record_signals import Recorder
 import asyncio
 from PySide6.QtWidgets import QApplication  # Add this import if not already present
+import logging
 
 
 class TrialDisplayUI(QMainWindow):
@@ -337,7 +338,6 @@ class TrialDisplayUI(QMainWindow):
                 box.setStyleSheet(f"background-color: rgba({x},{y},{z}, 0); border: 1px solid black;")
 
 
-
     def playCurrentAudio(self):
         trial = self.trials_data.iloc[self.current_trial_index]
         if self.current_trial_index<5:
@@ -359,6 +359,10 @@ class TrialDisplayUI(QMainWindow):
         # Start a thread for recording EEG and gaze -- EEG Recorder
         recording_thread = threading.Thread(target=self.recordData)
         recording_thread.start()
+
+        # Wait for first samples from both EEG and gaze streams
+        self.recorder.first_eeg_sample_event.wait()
+        self.recorder.first_gaze_sample_event.wait()
 
         # Play audio on the main thread
         self.playAudio(audio_files)
@@ -478,7 +482,6 @@ class TrialDisplayUI(QMainWindow):
         """Runs the Recorder's main function."""
         self.recorder.stop_event.clear()  # Ensure the recorder is ready to record
         asyncio.run(self.recorder.main())  # Run recording asynchronously
-
 
     def playAudio(self, audio_files):
         timestamps = []

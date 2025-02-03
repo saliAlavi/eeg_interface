@@ -30,6 +30,8 @@ class Recorder():
     def __init__(self, configs):
         self.configs = configs
         self.stop_event = threading.Event()
+        self.first_eeg_sample_event = threading.Event() #first sample
+        self.first_gaze_sample_event = threading.Event() #first sample
         self.create_folder('recordings')
 
     def create_folder(self,folder):
@@ -61,6 +63,9 @@ class Recorder():
                             if gaze_timestamp is None:
                                 gaze, gaze_timestamp = await gaze_stream.get()
 
+                        if not self.first_gaze_sample_event.is_set(): #first sample
+                            logging.info("First gaze sample received.")
+                            self.first_gaze_sample_event.set()
                         self.log(f"Gaze timestamp: {gaze_timestamp}")
                         
 
@@ -96,9 +101,12 @@ class Recorder():
             # interested in it)
             # sample, timestamp = inlet.pull_sample()
             sample, eeg_timestamp = await self.read_single_eeg(inlet)
+            if not self.first_eeg_sample_event.is_set(): #first sample
+                logging.info("First eeg sample received.")
+                self.first_eeg_sample_event.set()
             # sample, timestamp = await self.read_single_eeg(inlet)
             # sample, timestamps = await self.loop.run_in_executor(None, inlet.pull_sample)
-            timestamps.append({"eeg_ts": eeg_timestamp, "sample": sample})
+            timestamps.append({"eeg_ts": eeg_timestamp, "sample": sample}) 
             # self.log(f'Freq {ctr//sr}')
             if ctr%(self.configs['print_every']* sr)==0 and (ctr//sr)>0:
                 self.log(f'EEG: {eeg_timestamp}, {sample}')
