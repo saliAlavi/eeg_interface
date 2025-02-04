@@ -2,8 +2,8 @@ from pydub import AudioSegment
 import os
 
 # Set the input and output directories
-input_directory = "audio_stimuli_data\pairs"
-output_directory = "audio_stimuli_data\pairs_new"
+input_directory = "audio_stimuli_data/pairs"
+output_directory = "audio_stimuli_data/pairs_new"
 
 # Make sure output directory exists
 os.makedirs(output_directory, exist_ok=True)
