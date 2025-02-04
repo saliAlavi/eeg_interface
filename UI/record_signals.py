@@ -46,8 +46,11 @@ class Recorder():
 
     async def record_gaze(self):
         timestamps=[]
+        gaze_time= []
         file_dir = os.path.join(self.configs['save_dir'], 'gaze_data.p')
         file = open(file_dir,'wb')
+        time_dir = os.path.join(self.configs['save_dir'], 'gaze_time_data.p')
+        time_file = open(time_dir,'wb')
         self.log('HERE')
         async with connect_to_glasses.with_hostname(
             os.environ["G3_HOSTNAME"], using_zeroconf=True
@@ -55,6 +58,7 @@ class Recorder():
             async with g3.stream_rtsp(gaze=True) as streams:
                 async with streams.gaze.decode() as gaze_stream:
                     time_start = time.time()
+                    # print(f"Gaze start time: {time_start:.6f} seconds")
                     
                     while not self.stop_event.is_set():
                         
@@ -64,7 +68,8 @@ class Recorder():
                                 gaze, gaze_timestamp = await gaze_stream.get()
 
                         if not self.first_gaze_sample_event.is_set(): #first sample
-                            logging.info("First gaze sample received.")
+                            first_sample_time = time.time()
+                            logging.info(f"First gaze sample received at {first_sample_time:.6f} seconds")
                             self.first_gaze_sample_event.set()
                         self.log(f"Gaze timestamp: {gaze_timestamp}")
                         
@@ -75,8 +80,11 @@ class Recorder():
                             # self.save_var({'gaze_ts':gaze_timestamp, 'gaze2d':gaze['gaze2d']}, file)
 
                     time_end = time.time()
+                    gaze_time.append({'start_time':time_start, 'first_sample_time': first_sample_time, 'end_time':time_end, 'running_time':(time_end-time_start)})
+                    # print(f"Gaze end time: {time_end:.6f} seconds")
                     self.log(f'Running time: {time_end-time_start}')
 
+        self.save_var(gaze_time,time_file)
         self.save_var(timestamps, file)
         file.close()
 
@@ -89,6 +97,8 @@ class Recorder():
     async def record_eeg(self):
         file_dir = os.path.join(self.configs['save_dir'], 'eeg_data.p')
         file = open(file_dir, 'wb+')
+        time_dir = os.path.join(self.configs['save_dir'], 'eeg_time_data.p')
+        time_file = open(time_dir,'wb')
         self.log("looking for an EEG stream...")
         streams = resolve_stream('type', 'EEG')
         sr = self.configs['sr_eeg']
@@ -96,13 +106,17 @@ class Recorder():
         inlet = StreamInlet(streams[0])
         ctr=0
         timestamps=[]
+        eeg_time=[]
+        time_start = time.time()
+        # print(f"EEG start time: {time_start:.6f} seconds")
         while not self.stop_event.is_set():
             # get a new sample (you can also omit the timestamp part if you're not
             # interested in it)
             # sample, timestamp = inlet.pull_sample()
             sample, eeg_timestamp = await self.read_single_eeg(inlet)
             if not self.first_eeg_sample_event.is_set(): #first sample
-                logging.info("First eeg sample received.")
+                first_sample_time = time.time()
+                logging.info(f"First eeg sample received at {first_sample_time:.6f} seconds")
                 self.first_eeg_sample_event.set()
             # sample, timestamp = await self.read_single_eeg(inlet)
             # sample, timestamps = await self.loop.run_in_executor(None, inlet.pull_sample)
@@ -113,7 +127,12 @@ class Recorder():
                 self.log(f'Event: {self.stop_event}')
                 # break
             ctr+=1
+        time_end = time.time()
+        eeg_time.append({'start_time':time_start, 'first_sample_time': first_sample_time, 'end_time':time_end, 'running_time':(time_end-time_start)})
+        # print(f"EEG end time: {time_end:.6f} seconds")
+        self.log(f'Running time: {time_end-time_start}')
         self.save_var(timestamps, file)
+        self.save_var(eeg_time,time_file)
             
 
     @staticmethod

@@ -497,14 +497,21 @@ class TrialDisplayUI(QMainWindow):
         start_event = threading.Event()
 
         def play_on_device(audio_data, device_id):
+            trial = self.trials_data.iloc[self.current_trial_index]
+            if self.current_trial_index<5:
+                trial_folder = os.path.join(self.participant_folder, trial['Trial No.'])
+            else:
+                trial_folder = os.path.join(self.participant_folder, "Eval-"+trial['Trial No.'])
+            os.makedirs(trial_folder, exist_ok=True) 
             try:
                 data, samplerate = audio_data
                 
                 # Wait for all threads to be ready to play simultaneously
-                start_event.wait()
+                # start_event.wait()
 
                 # Capture the time before starting playback
                 start_time = time.time()
+                # print(f"Audio start time: {start_time:.6f} seconds (device {device_id})")
 
                 # Start playing the audio on the specific device
                 sd.play(data, samplerate=samplerate, device=device_id)
@@ -512,9 +519,9 @@ class TrialDisplayUI(QMainWindow):
                 # Capture the time after calling sd.play()
                 playback_start_time = time.time()
 
-                # Calculate and print the startup time (time from calling sd.play to actual start)
-                startup_time = playback_start_time - start_time
-                print(f"Audio startup time: {startup_time:.6f} seconds (device {device_id})")
+                # # Calculate and print the startup time (time from calling sd.play to actual start)
+                # startup_time = playback_start_time - start_time
+                # print(f"Audio startup time: {startup_time:.6f} seconds (device {device_id})")
 
                 # Wait for the playback to finish
                 sd.wait()
@@ -522,16 +529,22 @@ class TrialDisplayUI(QMainWindow):
                 # Record the end time after the audio finishes
                 end_time = time.time()
 
+
                 # Store the timestamps for each playback
                 timestamps.append({
                     "device_id": device_id,
                     "start_time": start_time,
-                    "end_time": end_time,
-                    "duration": (end_time - start_time)
+                    "playback_start_time": playback_start_time,
+                    "end_time": end_time
                 })
+
+                # print(f"Audio end time: {end_time:.6f} seconds (device {device_id})")
 
             except Exception as e:
                 print(f"Error playing audio on device {device_id}: {e}")
+
+            with open(os.path.join(trial_folder, "audio_timestamps.json"), "w") as json_file:
+                json.dump(timestamps, json_file, indent=4)  # indent=4 makes the JSON pretty and readable     
 
         threads = []
 

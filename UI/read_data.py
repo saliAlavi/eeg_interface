@@ -1,22 +1,17 @@
 import pickle
 import os
-pickle_file = "experiment_data/a6a3ac5b/Training-1/gaze_data.p"
-
-print(os.path.getsize(pickle_file))
+pickle_file = "experiment_data/6e149c40/Training-1/gaze_time_data.p"
 
 with open(pickle_file, 'rb') as f:
     data = pickle.load(f)
 
 print(data)
-print(len(data))
 
-pickle_file = "experiment_data/a6a3ac5b/Training-1/eeg_data.p"
+pickle_file = "experiment_data/6e149c40/Training-1/eeg_time_data.p"
 
-print(os.path.getsize(pickle_file))
 
 with open(pickle_file, 'rb') as f:
     data = pickle.load(f)
 
 
-# print(data)
-print(len(data))
+print(data)
