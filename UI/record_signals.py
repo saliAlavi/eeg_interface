@@ -59,7 +59,8 @@ class Recorder():
                 async with streams.gaze.decode() as gaze_stream:
                     time_start = time.time()
                     # print(f"Gaze start time: {time_start:.6f} seconds")
-                    
+                    gaze_timestamp = None
+                    first_sample_time = None
                     while not self.stop_event.is_set():
                         
                         gaze, gaze_timestamp = await gaze_stream.get()
@@ -79,10 +80,10 @@ class Recorder():
                             timestamps.append({'gaze_ts':gaze_timestamp, 'gaze2d':gaze['gaze2d']})
                             # self.save_var({'gaze_ts':gaze_timestamp, 'gaze2d':gaze['gaze2d']}, file)
 
-                    time_end = time.time()
-                    gaze_time.append({'start_time':time_start, 'first_sample_time': first_sample_time, 'end_time':time_end, 'running_time':(time_end-time_start)})
+                    current_time = time.time()
+                    gaze_time.append({'start_time':time_start, 'first_sample_time': first_sample_time, 'end_time':current_time, 'running_time':(current_time-time_start), 'gaze_ts': gaze_timestamp})
                     # print(f"Gaze end time: {time_end:.6f} seconds")
-                    self.log(f'Running time: {time_end-time_start}')
+                    self.log(f'Running time: {current_time-time_start}')
 
         self.save_var(gaze_time,time_file)
         self.save_var(timestamps, file)
@@ -109,6 +110,8 @@ class Recorder():
         eeg_time=[]
         time_start = time.time()
         # print(f"EEG start time: {time_start:.6f} seconds")
+        eeg_timestamp = None
+        first_sample_time = None
         while not self.stop_event.is_set():
             # get a new sample (you can also omit the timestamp part if you're not
             # interested in it)
@@ -128,7 +131,7 @@ class Recorder():
                 # break
             ctr+=1
         time_end = time.time()
-        eeg_time.append({'start_time':time_start, 'first_sample_time': first_sample_time, 'end_time':time_end, 'running_time':(time_end-time_start)})
+        eeg_time.append({'start_time':time_start, 'first_sample_time': first_sample_time, 'end_time':time_end, 'running_time':(time_end-time_start), 'eeg_ts': eeg_timestamp})
         # print(f"EEG end time: {time_end:.6f} seconds")
         self.log(f'Running time: {time_end-time_start}')
         self.save_var(timestamps, file)
