@@ -35,6 +35,6 @@ if __name__ == "__main__":
     device_ids = sorted(device_ids, reverse=True)
     
     print(device_ids)
-    index = 1  # Replace with your desired device index
+    index = 0  # Replace with your desired device index
 
-    # play_flac(file_path, device_ids[index])
+    play_flac(file_path, device_ids[index])

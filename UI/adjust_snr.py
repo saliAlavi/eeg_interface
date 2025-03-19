@@ -5,11 +5,11 @@ import os
 import pandas as pd
 
 # Load the CSV file
-file_path = "audio_stimuli_data/trials_original.csv"
+file_path = "audio_stimuli_data/trials.csv"
 df = pd.read_csv(file_path)
 
-# Set target SNR globally
-target_snr_db = 15
+# # Set target SNR globally
+# target_snr_db = 20
 
 # Function to compute gain adjustment for target SNR
 def adjust_snr(signal, noise, target_snr_db):
@@ -27,32 +27,40 @@ os.makedirs(output_dir, exist_ok=True)
 for index, row in df.iterrows():
     attended_speaker = row["Attended Speaker"]
 
-    # Load all three audio files
+    target_snr_db = row["SNR"]
+
+
+    # Load all three audio files (ensuring each is saved)
     device_files = {
-        1: row["Device-1"],  # Left channel of Device-1
-        2: row["Device-1"],  # Right channel of Device-1
-        3: row["Device-2"],  # Left channel of Device-2
-        4: row["Device-2"],  # Right channel of Device-2
-        5: row["Device-3"],  # Left channel of Device-3
-        6: row["Device-3"],  # Right channel of Device-3
+        "Device-1": row["Device-1"],
+        "Device-2": row["Device-2"],
+        "Device-3": row["Device-3"],
     }
-    
-    # Identify the attended file and attended channel
-    attended_file = device_files.get(attended_speaker, None)
+
+    # Determine which file contains the attended speaker
+    attended_file = None
+    for key, file_name in device_files.items():
+        if attended_speaker in [1, 2] and key == "Device-1":
+            attended_file = file_name
+        elif attended_speaker in [3, 4] and key == "Device-2":
+            attended_file = file_name
+        elif attended_speaker in [5, 6] and key == "Device-3":
+            attended_file = file_name
+
     attended_channel = 0 if attended_speaker % 2 == 1 else 1  # Left for odd, Right for even
     
     if attended_file is None:
-        print(f"⚠️ Skipping trial {index}: Attended speaker {attended_speaker} is invalid.")
+        print(f"⚠️ Skipping trial {index}: No attended file found for speaker {attended_speaker}.")
         continue
 
     # Load all audio files
     signals = {}
     sample_rate = None
-    
+
     for key, file_name in device_files.items():
         file_path = f"audio_stimuli_data/pairs_original/{file_name}"
         if os.path.exists(file_path):
-            print(f"✅ File Found: {file_path}")
+            print(f"✅ Loading: {file_path}")
             y, sr = sf.read(file_path, always_2d=True)  # Read stereo audio
             signals[key] = y.T  # Transpose to (channels, samples)
             sample_rate = sr  # Store sample rate
@@ -61,27 +69,26 @@ for index, row in df.iterrows():
             continue
 
     # Ensure the attended file is loaded
-    if attended_speaker not in signals:
+    if attended_file not in device_files.values():
         print(f"🚨 ERROR: Attended file missing: {attended_file}")
         continue
 
     # Verify stereo format before proceeding
-    if signals[attended_speaker].shape[0] != 2:
-        print(f"🚨 ERROR: {attended_file} is not stereo! Shape: {signals[attended_speaker].shape}")
+    if signals[key].shape[0] != 2:
+        print(f"🚨 ERROR: {file_name} is not stereo! Shape: {signals[key].shape}")
         continue  # Skip this trial
 
     # Debug: Print signal details
     print(f"🛠️ Processing Trial {index}: Attended Speaker = {attended_speaker}, File = {attended_file}, Channel = {attended_channel}")
 
     # Get attended signal
-    attended_signal = signals[attended_speaker][attended_channel]
+    attended_signal = signals[[k for k, v in device_files.items() if v == attended_file][0]][attended_channel]
 
     # Construct the noise by summing all unattended sources
     noise = np.zeros_like(attended_signal)
-    for spk, audio in signals.items():
-        if spk != attended_speaker:
-            channel = 0 if spk % 2 == 1 else 1
-            noise += audio[channel]
+    for key, audio in signals.items():
+        if device_files[key] != attended_file:
+            noise += audio[0] + audio[1]  # Sum both channels for total noise
 
     # Compute gain for 15 dB SNR
     gain = adjust_snr(attended_signal, noise, target_snr_db)
@@ -92,7 +99,7 @@ for index, row in df.iterrows():
         continue
 
     # Apply gain adjustment only to the attended channel
-    signals[attended_speaker][attended_channel] *= gain
+    signals[[k for k, v in device_files.items() if v == attended_file][0]][attended_channel] *= gain
 
     # Save all processed files (Device-1, Device-2, Device-3)
     for key, file_name in device_files.items():
