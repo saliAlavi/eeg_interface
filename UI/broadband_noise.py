@@ -1,35 +1,35 @@
 import numpy as np
 import soundfile as sf
 
-# 🎯 Parameters
-duration = 10  # seconds
-sample_rate = 48000  # Hz
-target_power_db = -10  # Desired power level in dBFS
+# # 🎯 Parameters
+# duration = 10  # seconds
+# sample_rate = 48000  # Hz
+# target_power_db = -10  # Desired power level in dBFS
 
-# 🎵 Generate White Noise
-white_noise = np.random.normal(0, 1, int(duration * sample_rate))
+# # 🎵 Generate White Noise
+# white_noise = np.random.normal(0, 1, int(duration * sample_rate))
 
-# 🔥 Convert dBFS to Linear Power
-target_power_linear = 10 ** (target_power_db / 10)
+# # 🔥 Convert dBFS to Linear Power
+# target_power_linear = 10 ** (target_power_db / 10)
 
-# 🎚️ Normalize to Desired Power
-current_power = np.mean(white_noise ** 2)
-scaling_factor = np.sqrt(target_power_linear / current_power)
-broadband_noise = white_noise * scaling_factor
+# # 🎚️ Normalize to Desired Power
+# current_power = np.mean(white_noise ** 2)
+# scaling_factor = np.sqrt(target_power_linear / current_power)
+# broadband_noise = white_noise * scaling_factor
 
-# 💾 Save as a WAV File for Playback
-sf.write('broadband_noise_dbfs.wav', broadband_noise, sample_rate)
+# # 💾 Save as a WAV File for Playback
+# sf.write('broadband_noise_dbfs.wav', broadband_noise, sample_rate)
 
-print(f"Generated broadband noise with approximately {target_power_db} dBFS power.")
+# print(f"Generated broadband noise with approximately {target_power_db} dBFS power.")
 
-def calculate_audio_power(file_path: str) -> dict:
-    # Load audio data from .flac file
-    audio_data, samplerate = sf.read(file_path)
-    # Calculate the power of each channel in dB
-    power = 10 * np.log10(np.mean(audio_data ** 2) + 1e-10)
-    return power
+# def calculate_audio_power(file_path: str) -> dict:
+#     # Load audio data from .flac file
+#     audio_data, samplerate = sf.read(file_path)
+#     # Calculate the power of each channel in dB
+#     power = 10 * np.log10(np.mean(audio_data ** 2) + 1e-10)
+#     return power
 
-print(calculate_audio_power('broadband_noise_dbfs.wav'))
+# print(calculate_audio_power('broadband_noise_dbfs.wav'))
 
 
 
@@ -74,46 +74,47 @@ print(calculate_audio_power('broadband_noise_dbfs.wav'))
 # plt.grid(True)
 # plt.show()
 
-import soundfile as sf
-import sounddevice as sd
+# import soundfile as sf
+# import sounddevice as sd
 
-# 📂 Load the audio file
-file_path = 'broadband_noise_dbfs.wav'  # Replace with your file path
-audio_data, sample_rate = sf.read(file_path)
+# # 📂 Load the audio file
+# file_path = 'broadband_noise_dbfs.wav'  # Replace with your file path
+# audio_data, sample_rate = sf.read(file_path)
 
 
-# ✅ Check if the audio is already mono
-if audio_data.ndim > 1:
-    print("The audio file is already stereo or multi-channel.")
-else:
-    # 🎧 Create a silent second channel
-    silent_channel = np.zeros_like(audio_data)
+# # ✅ Check if the audio is already mono
+# if audio_data.ndim > 1:
+#     print("The audio file is already stereo or multi-channel.")
+# else:
+#     # 🎧 Create a silent second channel
+#     silent_channel = np.zeros_like(audio_data)
 
-    # 🎚️ Combine to create a stereo signal
-    stereo_audio = np.column_stack((audio_data, silent_channel))
+#     # 🎚️ Combine to create a stereo signal
+#     stereo_audio = np.column_stack((audio_data, silent_channel))
 
-    # 💾 Save the stereo audio file
-    output_path = 'broadband_noise_dbfs.wav'
-    sf.write(output_path, stereo_audio, sample_rate)
-    print(f"Stereo audio file created: {output_path}")
+#     # 💾 Save the stereo audio file
+#     output_path = 'broadband_noise_dbfs.wav'
+#     sf.write(output_path, stereo_audio, sample_rate)
+#     print(f"Stereo audio file created: {output_path}")
 
-# 🎚️ Check if the audio is stereo
-if audio_data.ndim > 1:
-    # Extract the first channel (usually the left channel)
-    stereo_audio = stereo_audio[:, 0]
+# # 🎚️ Check if the audio is stereo
+# if audio_data.ndim > 1:
+#     # Extract the first channel (usually the left channel)
+#     stereo_audio = stereo_audio[:, 0]
 
-# 🎵 Play the audio
-print("Playing the first channel...")
-sd.play(stereo_audio, sample_rate)
-sd.wait()  # Wait until the audio finishes playing
-print("Playback finished.")
+# # 🎵 Play the audio
+# print("Playing the first channel...")
+# sd.play(stereo_audio, sample_rate)
+# sd.wait()  # Wait until the audio finishes playing
+# print("Playback finished.")
 
 import numpy as np
 import soundfile as sf
+import sounddevice as sd
 from scipy import signal
 
 # 📂 Load the audio file
-file_path = 'broadband_noise_dbfs.wav'  # Replace with your audio file path
+file_path = "C:/Codes/eeg_interface_naimul/eeg_interface/UI/audio_stimuli_data/pairs/30_2127.flac"  # Replace with your audio file path
 audio_data, sample_rate = sf.read(file_path)
 
 # 🎚️ Select the first channel if stereo
@@ -152,6 +153,9 @@ rms = np.sqrt(np.mean(weighted_audio**2))
 dba_level = 20 * np.log10(rms)
 
 print(f"The A-weighted sound level of the broadband noise is approximately {dba_level:.2f} dB(A)")
+
+sd.play(weighted_audio, sample_rate)
+sd.wait()
 
 
 

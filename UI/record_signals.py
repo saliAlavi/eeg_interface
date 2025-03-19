@@ -61,6 +61,8 @@ class Recorder():
                     # print(f"Gaze start time: {time_start:.6f} seconds")
                     gaze_timestamp = None
                     first_sample_time = None
+                    first_gaze_ts = None
+                    count = 0
                     while not self.stop_event.is_set():
                         
                         gaze, gaze_timestamp = await gaze_stream.get()
@@ -79,9 +81,12 @@ class Recorder():
                         if "gaze2d" in gaze:
                             timestamps.append({'gaze_ts':gaze_timestamp, 'gaze2d':gaze['gaze2d']})
                             # self.save_var({'gaze_ts':gaze_timestamp, 'gaze2d':gaze['gaze2d']}, file)
+                            if count == 0:
+                                    first_gaze_ts = gaze_timestamp
+                            count += 1
 
                     current_time = time.time()
-                    gaze_time.append({'start_time':time_start, 'first_sample_time': first_sample_time, 'end_time':current_time, 'running_time':(current_time-time_start), 'gaze_ts': gaze_timestamp})
+                    gaze_time.append({'start_time':time_start, 'first_sample_time': first_sample_time, 'end_time':current_time, 'running_time':(current_time-time_start), 'gaze_ts': first_gaze_ts})
                     # print(f"Gaze end time: {time_end:.6f} seconds")
                     self.log(f'Running time: {current_time-time_start}')
 
@@ -112,11 +117,16 @@ class Recorder():
         # print(f"EEG start time: {time_start:.6f} seconds")
         eeg_timestamp = None
         first_sample_time = None
+        first_eeg_ts = None
+        count = 0
         while not self.stop_event.is_set():
             # get a new sample (you can also omit the timestamp part if you're not
             # interested in it)
             # sample, timestamp = inlet.pull_sample()
             sample, eeg_timestamp = await self.read_single_eeg(inlet)
+            if count == 0:
+                first_eeg_ts = eeg_timestamp
+            count += 1
             if not self.first_eeg_sample_event.is_set(): #first sample
                 first_sample_time = time.time()
                 logging.info(f"First eeg sample received at {first_sample_time:.6f} seconds")
@@ -131,7 +141,7 @@ class Recorder():
                 # break
             ctr+=1
         time_end = time.time()
-        eeg_time.append({'start_time':time_start, 'first_sample_time': first_sample_time, 'end_time':time_end, 'running_time':(time_end-time_start), 'eeg_ts': eeg_timestamp})
+        eeg_time.append({'start_time':time_start, 'first_sample_time': first_sample_time, 'end_time':time_end, 'running_time':(time_end-time_start), 'eeg_ts': first_eeg_ts})
         # print(f"EEG end time: {time_end:.6f} seconds")
         self.log(f'Running time: {time_end-time_start}')
         self.save_var(timestamps, file)

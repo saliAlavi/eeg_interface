@@ -53,6 +53,8 @@ class TrialDisplayUI(QMainWindow):
         self.device_ids = [
             i for i, device in enumerate(devices) if "Eris 3.5BT" in device['name']
         ]
+        self.device_ids = self.device_ids[:3]
+        self.device_ids = sorted(self.device_ids, reverse=True)
 
         # Initialize UI elements
         self.initUI()
