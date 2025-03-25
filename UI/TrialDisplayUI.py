@@ -5,8 +5,9 @@ import time
 from PySide6.QtCore import Qt
 from PySide6.QtCore import QTimer
 from PySide6.QtWidgets import (
-    QMainWindow, QWidget, QHBoxLayout, QVBoxLayout, QLabel, QPushButton, QMessageBox, QRadioButton, QButtonGroup, QGraphicsOpacityEffect
+    QMainWindow, QWidget, QHBoxLayout, QVBoxLayout, QLabel, QPushButton, QMessageBox, QRadioButton, QButtonGroup, QInputDialog
 )
+from PySide6.QtGui import QPalette, QColor
 from PySide6.QtGui import QFont
 import soundfile as sf
 import sounddevice as sd
@@ -24,7 +25,22 @@ class TrialDisplayUI(QMainWindow):
         self.csv_path = csv_path
         self.audio_dir = audio_dir
         self.trials_data = pd.read_csv(self.csv_path)
-        self.current_trial_index = 0
+        # Ask user for starting trial number
+        start_trial, ok = QInputDialog.getInt(
+            self, 
+            "Start Trial",                     # Dialog title
+            "Enter the trial number to start from:",  # Prompt
+            1,                                 # Default value
+            1,                                 # Minimum value
+            len(self.trials_data),            # Maximum value
+            1                                  # Step size
+        )
+        if ok:
+            self.current_trial_index = start_trial - 1  # Adjust for 0-based index
+        else:
+            self.current_trial_index = 0  # Default to trial 1 if user cancels
+            
+        # self.current_trial_index = 0
         self.unique_id = unique_id
         self.data_directory = data_directory
 
@@ -63,6 +79,13 @@ class TrialDisplayUI(QMainWindow):
         # Main layout
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
+        
+
+        palette = self.central_widget.palette()
+        palette.setColor(QPalette.Window, QColor("#BEDBED"))
+        self.central_widget.setAutoFillBackground(True)
+        self.central_widget.setPalette(palette)
+
         self.layout = QVBoxLayout(self.central_widget)
 
         # Create a layout for the speaker boxes
@@ -71,7 +94,7 @@ class TrialDisplayUI(QMainWindow):
         # Create the speaker boxes with specific colors and labels
         self.speaker_boxes = []
         self.speaker_colors = []
-        speaker_info = [("red", "Speaker-1"), ("blue", "Speaker-2"), ("green", "Speaker-3"), ("purple", "Speaker-4")]
+        speaker_info = [("white", "Speaker-1"), ("orange", "Speaker-2"), ("yellow", "Speaker-3"), ("black", "Speaker-4")]
         for color, text in speaker_info:
             # Store the color
             self.speaker_colors.append(color)
@@ -179,10 +202,10 @@ class TrialDisplayUI(QMainWindow):
                 self.trial_label.setText(f"Trial #<span style='font-weight: bold;'>{trial['Trial No.']}</span>")
             # Assume the color mapping for speakers is defined
             color_map = {
-                1: "red",
-                2: "blue",
-                3: "green",
-                4: "purple"
+                1: "white",
+                2: "orange",
+                3: "yellow",
+                4: "black"
             }
 
             # Get the attended speaker and its color
@@ -320,10 +343,10 @@ class TrialDisplayUI(QMainWindow):
         # Set the highlighted speaker
         self.highlighted_speaker = speaker_index
         color_map = {
-                "red": (255, 0, 0),
-                "blue": (0, 0, 255),
-                "green": (34, 139, 34),
-                "purple": (128, 0, 128)
+                "white": (255, 255, 255),
+                "orange": (255, 121, 0),
+                "yellow": (255, 255, 0),
+                "black": (0, 0, 0)
             }
 
         for i, box in enumerate(self.speaker_boxes):
