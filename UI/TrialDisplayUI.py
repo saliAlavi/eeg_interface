@@ -410,7 +410,7 @@ class TrialDisplayUI(QMainWindow):
             (trial['Option-3'], "Incorrect 3")
         ]
         random.shuffle(options)
-        options.append(("I did not pay attention", "No Attention"))
+        options.append(("I could not pay attention", "No Attention"))
 
         self.option_roles = {}
 
