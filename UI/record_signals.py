@@ -63,6 +63,7 @@ class Recorder():
                     first_sample_time = None
                     first_gaze_ts = None
                     count = 0
+                    await g3.recorder.start()
                     while not self.stop_event.is_set():
                         
                         gaze, gaze_timestamp = await gaze_stream.get()
@@ -85,6 +86,7 @@ class Recorder():
                                     first_gaze_ts = gaze_timestamp
                             count += 1
 
+                    await g3.recorder.stop()
                     current_time = time.time()
                     gaze_time.append({'start_time':time_start, 'first_sample_time': first_sample_time, 'end_time':current_time, 'running_time':(current_time-time_start), 'gaze_ts': first_gaze_ts})
                     # print(f"Gaze end time: {time_end:.6f} seconds")
