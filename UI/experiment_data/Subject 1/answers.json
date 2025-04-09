@@ -1,0 +1,631 @@
+[
+    {
+        "Trial No.": "Training-1",
+        "Question": "What does the creature demand?",
+        "Selected Answer": "To be destroyed.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "Training-2",
+        "Question": "What is the focus of the speech?",
+        "Selected Answer": "Individual duties.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "Training-3",
+        "Question": "What happens to Pinocchio?",
+        "Selected Answer": "He becomes a real boy.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "Training-4",
+        "Question": "What is \"The Lion's Den\u201d?",
+        "Selected Answer": "A meeting place for prisoners to plan escapes.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "Training-5",
+        "Question": "What does the caterpillar ask Alice?",
+        "Selected Answer": "Who she is.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "1",
+        "Question": "What did Raymond insist on providing for the person he was assisting?",
+        "Selected Answer": "Air",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "2",
+        "Question": "What caused the rapid desertion of the mansion?",
+        "Selected Answer": "The unexpected appearance of the Brigade of soldiers and the disclosure that followed.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "3",
+        "Question": "How many sons did the king have?",
+        "Selected Answer": "11 sons",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "4",
+        "Question": "What should the owner of horses ensure for their well-being?",
+        "Selected Answer": "They should be well housed, well fed, and well-groomed.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "5",
+        "Question": "What did the narrator conclude upon waking up in familiar surroundings?",
+        "Selected Answer": "I could not pay attention",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "6",
+        "Question": "What activity were the Indian men engaged in during the hunting season?",
+        "Selected Answer": "Wrapping red porcupine quills about the long fringes of a buckskin cushion.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "7",
+        "Question": "Who did the princess and Prince Ramon claim to be when speaking to the sultan?",
+        "Selected Answer": "Sons of the sultan's late intendant of the gardens.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "8",
+        "Question": "What did the man admire?",
+        "Selected Answer": "Everything he saw",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "9",
+        "Question": "Why is every Fortune considered good fortune?",
+        "Selected Answer": "Because it brings wealth and happiness.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "10",
+        "Question": "What time did the daylight wake the characters?",
+        "Selected Answer": "8 in the morning",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "11",
+        "Question": "How long has it been since Dr. Bruce delivered his message about new discipleship at Nazareth Avenue Church?",
+        "Selected Answer": "6 months",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "12",
+        "Question": "Who did Captain Mitchell take pride in for their devotion and efficiency in Sulaco?",
+        "Selected Answer": "A sort of universal factotum",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "13",
+        "Question": "What is an example of a collective idea mentioned?",
+        "Selected Answer": "A dinner",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "14",
+        "Question": "What was Tony struggling to balance at the beginning of the passage?",
+        "Selected Answer": "The chafing dish",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "15",
+        "Question": "In what year was Kepler born?",
+        "Selected Answer": "1971",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "16",
+        "Question": "Who were Chris and Amos uninterested in during the blistering noon?",
+        "Selected Answer": "The Emperor of China",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "17",
+        "Question": "Which metaphor is used to describe a wave?",
+        "Selected Answer": "Like a shadowy form",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "18",
+        "Question": "What natural phenomena provided light as the boat drifted on?",
+        "Selected Answer": "The brilliantly varnished door's reflection",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "19",
+        "Question": "From where was the caravan bound for Baghdad?",
+        "Selected Answer": "Egypt",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "20",
+        "Question": "How many men had the Cisco Kid killed in more or less fair scrimmages?",
+        "Selected Answer": "Six",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "21",
+        "Question": "What is romance closely allied to?",
+        "Selected Answer": "Religion",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "22",
+        "Question": "What strange event is described?",
+        "Selected Answer": "A mischievous Jesuit formed a secret council.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "23",
+        "Question": "Who did the notary perceive upon entering the Chalet?",
+        "Selected Answer": "The young Bank of Goldman Haim",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "24",
+        "Question": "What is one argument made against the practice of confession and absolution in Catholic countries?",
+        "Selected Answer": "A mournful farewell is described between two people parting",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "25",
+        "Question": "What was Lord Tubby's main activity despite his poor performance?",
+        "Selected Answer": "Shooting at small birds with his bow and arrow.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "26",
+        "Question": "What role did the courtiers possess?",
+        "Selected Answer": "They are diplomats and throwing light upon the unraveling of complicated intrigues.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "27",
+        "Question": "What did Mozart wish to introduce in Italy?",
+        "Selected Answer": "The German taste in minuets",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "28",
+        "Question": "How long had Mr. Booth gone without eating at the time mentioned in the audio?",
+        "Selected Answer": "40 hours",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "29",
+        "Question": "Where was Vergilius sent to study after his father died?",
+        "Selected Answer": "Detroit",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "30",
+        "Question": "What did the lad do when he went far into the wood out of his mother's sight?",
+        "Selected Answer": "He tied the Beltway around his waist and felt as strong as if he could lift the whole hill.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "31",
+        "Question": "What did Teddy hope to find in his stocking on Christmas morning?",
+        "Selected Answer": "A meal of human flesh",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "32",
+        "Question": "What natural setting is described?",
+        "Selected Answer": "Redwood Forest",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "33",
+        "Question": "What unexpected development occurred in the Meeker family's fortunes as mentioned?",
+        "Selected Answer": "King Edwin received the faith and washing of holy regeneration.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "34",
+        "Question": "What scientific theory is highlighted as having one of its greatest triumphs in the discovery of Neptune,?",
+        "Selected Answer": "Theory of evolution",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "35",
+        "Question": "What was the architectural style of the building described?",
+        "Selected Answer": "Queen Anne's time",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "36",
+        "Question": "What was Joel busy arranging on the evening of the 5th of June?",
+        "Selected Answer": "The outbuildings comprising the kitchen and the offices.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "37",
+        "Question": "What concern did the lobby have regarding the man referred to in the audio?",
+        "Selected Answer": "The lobby was interested in making the man a public speaker.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "38",
+        "Question": "What event was taking place at the queen's palace in the story?",
+        "Selected Answer": "There was revelry and feasting.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "39",
+        "Question": "What was the general attitude of the people when the speaker became Governor?",
+        "Selected Answer": "The country was uniformly the same and uninteresting.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "40",
+        "Question": "Who was continually sending Mitchell away from her during the feast?",
+        "Selected Answer": "The reader",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "41",
+        "Question": "What activity is considered slightly better than rat catching for immature cats?",
+        "Selected Answer": "Miss Milner's admiration",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "42",
+        "Question": "What happened to the fighters' armor during the battle?",
+        "Selected Answer": "Their armor was so for human that men might see their naked.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "43",
+        "Question": "What action did the speaker take while emphasizing his words?",
+        "Selected Answer": "He raised his voice to a shout.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "44",
+        "Question": "How did the children perceive their mother's intentions,?",
+        "Selected Answer": "The children knew that their mother always wanted to do what was best for them.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "45",
+        "Question": "From which ancient civilization did the Egyptians derive their civilization?",
+        "Selected Answer": "Atlantis",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "46",
+        "Question": "Who appointed Cody as guide and chief of Scouts in October 1867?",
+        "Selected Answer": "I could not pay attention",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "47",
+        "Question": "What is being considered regarding the union of the soul and body?",
+        "Selected Answer": "The union of the soul with the body and eight points of inquiry.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "48",
+        "Question": "Where did the narrator find themselves upon waking up the next day?",
+        "Selected Answer": "On the deck of the Destroyer",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "49",
+        "Question": "Where were the offices of Peaceful Moments located?",
+        "Selected Answer": "In the rear of an imposing mansion with a large garden.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "50",
+        "Question": "What is described as being \"stretched and basking one side by inland ocean\"?",
+        "Selected Answer": "A hollow of the long smooth pillows",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "51",
+        "Question": "What is the inventor being compared to in terms of their device's excellence?",
+        "Selected Answer": "The advantages of cheese as a traveling companion.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "52",
+        "Question": "What action did the child decide to take while waiting?",
+        "Selected Answer": "She raised her window and allowed the cool wind to soothe her cheeks.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "53",
+        "Question": "What does the speaker suggest about Jesus as a man?",
+        "Selected Answer": "Jesus as a man was associated with the misery of a cab horse's life.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "54",
+        "Question": "What feature of the silkworm moth is highlighted in the proverb?",
+        "Selected Answer": "Eyebrows",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "55",
+        "Question": "What did the Roman Villas hear in the Valley of the Thames?",
+        "Selected Answer": "The cry of a tranquil man.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "56",
+        "Question": "Where was Bryce when he wanted to have a private talk with Foley?",
+        "Selected Answer": "In the neighborhood of Soho",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "57",
+        "Question": "What was Dr. Martin's main challenge in continuing the analysis of Sir Richmond after dinner?",
+        "Selected Answer": "Sir Richmond was evidently a creature of moods and would not engage in conversation.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "58",
+        "Question": "What did Arundel do to answer Scrap's inquiries about her mother?",
+        "Selected Answer": "He invented stories and pretended they were about her mother.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "59",
+        "Question": "What are some of the maxims in Geometry mentioned?",
+        "Selected Answer": "The mermaids' Lagoon is a shapeless pool of colors.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "60",
+        "Question": "What did Nicholas do to reduce exhaustion and fatigue during the journey?",
+        "Selected Answer": "I could not pay attention",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "61",
+        "Question": "Where was James Monroe, the 5th president of the United States, born?",
+        "Selected Answer": "Westmoreland County, Virginia",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "62",
+        "Question": "What was the initial effect of the introduction of machinery on labor hours in England?",
+        "Selected Answer": "It resulted in a lengthening of the hours of labor.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "64",
+        "Question": "Where were the two ladies located?",
+        "Selected Answer": "Near the small building that served as a kitchen",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "65",
+        "Question": "What did Tom and Jack discover about their past while talking?",
+        "Selected Answer": "They were born in the same community and had played together as small boys.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "66",
+        "Question": "Who identified themselves as George Jackson?",
+        "Selected Answer": "\"It's me,\" George Jackson said.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "67",
+        "Question": "What feature was noted about the dominant race of the inner world?",
+        "Selected Answer": "They have long narrow heads and great round eyes.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "68",
+        "Question": "According to Haddow, how is Chopin described in terms of his musical composition style?",
+        "Selected Answer": "Chopin is the poet of the single line, the maker of the phrase exquisite.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "69",
+        "Question": "According to the philosopher, what is the female considered to be?",
+        "Selected Answer": "A Miss begotten male",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "70",
+        "Question": "What natural processes are described as transporting rock waste to the sea?",
+        "Selected Answer": "Streams washing down slopes and underground waters dissolving material.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "71",
+        "Question": "What was the Dalmatian originally known as due to its behavior?",
+        "Selected Answer": "The coach dog",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "72",
+        "Question": "What did Miss Westerfield do after locking the door of her bedchamber?",
+        "Selected Answer": "She spoke to George about serving on a ship.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "73",
+        "Question": "Which phrase from the audio indicates a sense of respect or admiration?",
+        "Selected Answer": "I have a very high respect for",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "74",
+        "Question": "What did Senator Douglas reportedly say in his speech at Columbus, Ohio, as mentioned?",
+        "Selected Answer": "Our fathers, when they framed the government under which we live, understood this.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "75",
+        "Question": "When was Horace Greeley born?",
+        "Selected Answer": "February 3rd, 1811",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "76",
+        "Question": "How did Jean Valjean push the door?",
+        "Selected Answer": "Gently with the tip of his finger",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "77",
+        "Question": "Where did Marguerite go to study the ring more closely?",
+        "Selected Answer": "Into the woods.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "78",
+        "Question": "What is the difference between the attitude of a spectator and that of an agent or participant?",
+        "Selected Answer": "The spectator is indifferent to what is going on, while the agent or participant is bound up with it.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "79",
+        "Question": "What significant detail does the narrator recall about their birth?",
+        "Selected Answer": "The narrator was born a slave, the child of slave parents.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "80",
+        "Question": "What did the neighbors learn about Higgins the next day when they went to pay a call?",
+        "Selected Answer": "He had been in to see Mrs. Butcher before starting on his day's business.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "81",
+        "Question": "Who was the infant named after?",
+        "Selected Answer": "Oliver",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "82",
+        "Question": "What should be used to fill a metal powder flask to reduce bulges?",
+        "Selected Answer": "Ancient Egyptian cat mummies",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "83",
+        "Question": "What did the author regret not being able to bring with them in \"Herland\" by Charlotte Perkins Stetson Gilman?",
+        "Selected Answer": "Whole books full of notes",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "84",
+        "Question": "What did Ruby and Diamond achieve by the end of the month?",
+        "Selected Answer": "Ruby and Diamond joined the archery club.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "85",
+        "Question": "What peculiar characteristic did the observer notice about the man's eyebrows?",
+        "Selected Answer": "They were stiff and bristly.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "86",
+        "Question": "Who accompanied the narrator on the Grand Mission Excursion to the Chill Cat Country?",
+        "Selected Answer": "Mr. Vanderbilt, his wife, and a friend from Oregon",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "88",
+        "Question": "What was Colonel Selby's purpose for coming to Washington?",
+        "Selected Answer": "To get paid for some cotton that was destroyed during the war.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "89",
+        "Question": "What did Prince encounter as he rode downhill towards the battlefield?",
+        "Selected Answer": "Wounded men, one with a bleeding head and no cap being dragged by two soldiers.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "90",
+        "Question": "What did the narrator encounter when stepping into the slumgullion stage?",
+        "Selected Answer": "An Administration protest by Dudley field Malone",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "91",
+        "Question": "What did the two elder brothers wish for in the story?",
+        "Selected Answer": "To set out to see the world",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "92",
+        "Question": "What did Mary claim she never did in her life?",
+        "Selected Answer": "Embrace her lover in public",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "93",
+        "Question": "What did the narrator see upon reaching the top of the hill?",
+        "Selected Answer": "A flag upon the castle and ships moving or lying anchored.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "94",
+        "Question": "What did the discoverer find difficult to do initially due to the light?",
+        "Selected Answer": "See anything",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "95",
+        "Question": "Who was the candidate proposed by the enemies of the House of Bourbon for the archbishopric in 1688?",
+        "Selected Answer": "Master Von Lewin of Amsterdam",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "96",
+        "Question": "Why will men be perfectly free in the ideal democratic state?",
+        "Selected Answer": "Because Diana appeared soon after breakfast with a basket of flowers.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "97",
+        "Question": "What is one argument made against the practice of confession and absolution in Catholic countries?",
+        "Selected Answer": "It is argued that confession and easy absolution lead to an increase in crime and immorality.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "98",
+        "Question": "What did the narrator decide to do with the magic watch as an experiment in the little town?",
+        "Selected Answer": "Wait till the little scene was over and then to Encore it.",
+        "Correct": 1
+    },
+    {
+        "Trial No.": "99",
+        "Question": "What extraordinary claim is made about impersonation in the 19th century?",
+        "Selected Answer": "That people could eat pie and cold fried pork before bed with impunity.",
+        "Correct": 0
+    },
+    {
+        "Trial No.": "100",
+        "Question": "What is one purpose of dress?",
+        "Selected Answer": "To put one's pecuniary standing in evidence.",
+        "Correct": 1
+    },
+    {
+        "Participant ID": "259ded77",
+        "Submission Time": "2025-04-03 16:58:28",
+        "Gender": "Man",
+        "Age": "26",
+        "Race & Ethnicity": [
+            "Asian"
+        ],
+        "Hand Preference": "Right",
+        "Ear Preference": "Any"
+    }
+]
