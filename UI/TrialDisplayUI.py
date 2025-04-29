@@ -284,7 +284,7 @@ class TrialDisplayUI(QMainWindow):
         self.submit_button.hide()
 
         # Start the break timer
-        self.break_time_remaining = 10*60  # 10 minutes in seconds
+        self.break_time_remaining = 1*60  # 10 minutes in seconds
         self.break_timer = QTimer(self)
         self.break_timer.timeout.connect(self.updateBreakCountdown)
         self.updateBreakCountdown()  # Initial update
