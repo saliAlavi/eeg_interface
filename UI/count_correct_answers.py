@@ -1,7 +1,7 @@
 import json
 
 # Load the JSON file
-participant = "Subject 8"
+participant = "Subject 9"
 with open('experiment_data/' + participant+ '/answers.json', 'r') as file:
     data = json.load(file)
 
