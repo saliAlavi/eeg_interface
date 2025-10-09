@@ -26,5 +26,5 @@ def merge_json_files(directory_path, output_file):
     print(f"Merged {len(merged_data)} JSON entries into {output_file}")
 
 # Example usage:
-subject_folder = 'experiment_data/Subject 10'
+subject_folder = 'experiment_data/Subject 15'
 merge_json_files(subject_folder, subject_folder+'/answers.json')

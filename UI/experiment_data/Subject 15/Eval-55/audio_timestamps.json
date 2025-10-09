@@ -1,0 +1,20 @@
+[
+    {
+        "device_id": 6,
+        "start_time": 1760041491.8931048,
+        "playback_start_time": 1760041492.0705419,
+        "end_time": 1760041522.2334495
+    },
+    {
+        "device_id": 5,
+        "start_time": 1760041491.8921046,
+        "playback_start_time": 1760041491.9875414,
+        "end_time": 1760041522.253531
+    },
+    {
+        "device_id": 3,
+        "start_time": 1760041491.8951044,
+        "playback_start_time": 1760041492.1505413,
+        "end_time": 1760041522.2765195
+    }
+]
